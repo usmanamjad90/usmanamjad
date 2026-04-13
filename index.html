@@ -182,6 +182,20 @@
   .apart-card p { font-size: 13px; color: #555; line-height: 1.7; }
   @media (max-width: 680px) { .apart-grid { grid-template-columns: 1fr; } }
 
+
+  .about-card-wide { background: #0d1b2e; border-radius: 12px; padding: 2rem 2.5rem; display: flex; align-items: center; gap: 3rem; }
+  .about-card-left { display: flex; align-items: center; gap: 1.25rem; flex-shrink: 0; padding-right: 3rem; border-right: 0.5px solid #1e3a5f; }
+  .about-card-right { display: grid; grid-template-columns: 1fr 1fr; gap: 0; flex: 1; }
+  .about-card-right .award { border-bottom: 0.5px solid #1e3a5f; }
+  .about-card-right .award:nth-last-child(-n+2) { border-bottom: none; }
+  @media (max-width: 680px) {
+    .about-card-wide { flex-direction: column; gap: 1.5rem; }
+    .about-card-left { border-right: none; padding-right: 0; border-bottom: 0.5px solid #1e3a5f; padding-bottom: 1.5rem; width: 100%; }
+    .about-card-right { grid-template-columns: 1fr; }
+    .about-card-right .award:nth-last-child(-n+2) { border-bottom: 0.5px solid #1e3a5f; }
+    .about-card-right .award:last-child { border-bottom: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -304,16 +318,16 @@
 </div>
 
 <div class="section">
-  <div class="about-grid">
-    <div>
-      <div class="section-label">About</div>
-      <h2>15 years closing deals. I do it because I'm genuinely good at it.</h2>
-      <p>I started at Xerox, sold at ADP, worked startups and SMBs at Salesforce, and spent the last six years as a top AE at a SaaS company — President's Club every year. I've sold into boardrooms and to first-time founders. Now I work with early-stage teams who need someone great at closing.</p>
-    </div>
-    <div class="about-card">
+  <div class="section-label">About</div>
+  <div class="about-card-wide">
+    <div class="about-card-left">
       <div class="avatar-ua">UA</div>
-      <div class="about-name">Usman Amjad</div>
-      <div class="about-role-txt">Fractional Sales Closer · Toronto, ON</div>
+      <div>
+        <div class="about-name">Usman Amjad</div>
+        <div class="about-role-txt">Fractional Sales Closer · Toronto, ON</div>
+      </div>
+    </div>
+    <div class="about-card-right">
       <div class="award"><div class="award-dot"></div>President's Club — 2021, 2022, 2023, 2024</div>
       <div class="award"><div class="award-dot"></div>$50M+ closed across SaaS and tech</div>
       <div class="award"><div class="award-dot"></div>Salesforce, D2L, ADP, Xerox</div>
