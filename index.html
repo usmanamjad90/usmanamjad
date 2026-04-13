@@ -246,4 +246,190 @@
 <footer>© 2026 Usman Amjad · Toronto, ON</footer>
 
 </body>
+</html>  .testimonial-inner { max-width: 960px; margin: 0 auto; padding: 0 5%; }
+  .testimonial-inner .section-label { margin-bottom: 2rem; }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+  .testimonial-card { background: #fff; border: 0.5px solid #dbeafe; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
+  .quote-mark { font-size: 2rem; line-height: 1; color: #2563eb; font-weight: 700; }
+  .quote-text { font-size: 0.95rem; color: #1a1a1a; line-height: 1.7; font-weight: 500; flex: 1; }
+  .quote-author { display: flex; align-items: center; gap: 12px; padding-top: 1rem; border-top: 0.5px solid #dbeafe; }
+  .quote-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .av-blue { background: #2563eb; } .av-teal { background: #0891b2; } .av-green { background: #059669; } .av-amber { background: #d97706; }
+  .quote-role { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+  .quote-industry { font-size: 11px; color: #888; margin-top: 2px; }
+  .industry-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; margin-bottom: 4px; }
+  .badge-blue { background: #eff6ff; color: #2563eb; } .badge-teal { background: #ecfeff; color: #0e7490; } .badge-green { background: #f0fdf4; color: #15803d; } .badge-amber { background: #fffbeb; color: #92400e; }
+
+  .industries-section { background: #f8faff; border-top: 0.5px solid #dbeafe; border-bottom: 0.5px solid #dbeafe; padding: 5rem 0; }
+  .industries-inner { max-width: 960px; margin: 0 auto; padding: 0 5%; }
+  .industries-inner .section-label { margin-bottom: 0.75rem; }
+  .industries-inner h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 0.75rem; color: #0a0a0a; }
+  .industries-inner > p { font-size: 1rem; color: #666; line-height: 1.7; max-width: 520px; margin-bottom: 2rem; }
+  .industry-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 500px; }
+  .industry-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 0.5px solid #e8f0fe; font-size: 14px; font-weight: 500; color: #1a1a1a; }
+  .industry-dot { width: 8px; height: 8px; background: #2563eb; border-radius: 50%; flex-shrink: 0; }
+
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-grid h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 1.25rem; color: #0a0a0a; }
+  .about-grid > div > p { font-size: 1rem; color: #666; line-height: 1.7; margin-bottom: 1rem; }
+  .about-card { background: #0d1b2e; border-radius: 12px; padding: 2rem; }
+  .avatar-ua { width: 52px; height: 52px; border-radius: 50%; background: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 1rem; }
+  .about-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; color: #ffffff; }
+  .about-role-txt { font-size: 12px; color: #4a7aa0; margin-bottom: 1.5rem; }
+  .award { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #7a9bb5; padding: 8px 0; border-bottom: 0.5px solid #1e3a5f; }
+  .award:last-child { border-bottom: none; }
+  .award-dot { width: 5px; height: 5px; border-radius: 50%; background: #2563eb; flex-shrink: 0; }
+
+  .cta-band { background: linear-gradient(135deg, #0d1b2e 0%, #1a2f52 100%); padding: 5rem 5%; text-align: center; max-width: none; }
+  .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: #ffffff; letter-spacing: -1px; margin-bottom: 1rem; }
+  .cta-band p { font-size: 1rem; color: #4a7aa0; margin-bottom: 2rem; }
+  .btn-white { background: #2563eb; color: #fff !important; padding: 15px 36px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-block; }
+  .btn-white:hover { background: #1d4ed8; }
+
+  footer { background: #0d1b2e; text-align: center; padding: 2rem; font-size: 12px; color: #1e3a5f; border-top: 0.5px solid #1e3a5f; }
+
+  @media (max-width: 680px) {
+    .hero-inner { flex-direction: column-reverse; gap: 2rem; }
+    .hero-circle { width: 160px; height: 160px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stats-inner .stat:nth-child(2) { border-right: none; }
+    .stats-inner .stat:nth-child(3) { border-top: 0.5px solid #1e3a5f; }
+    .stats-inner .stat:nth-child(4) { border-top: 0.5px solid #1e3a5f; border-right: none; }
+    .stats { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Usman Amjad</div>
+  <a href="https://calendly.com/usmanbokinc/30min" class="nav-cta" target="_blank">Book a call →</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">Fractional Sales Closer</div>
+      <h1>Your deals aren't<br>closing themselves.<br><em>I will.</em></h1>
+      <p>I embed as your fractional closer and bring enterprise-level sales execution to your pipeline — no full-time hire, no ramp time, no excuses.</p>
+      <div class="hero-actions">
+        <a href="https://calendly.com/usmanbokinc/30min" class="btn-primary" target="_blank">Book a free 30-min call</a>
+        <a href="#how" class="btn-ghost">See how it works ↓</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="hero-circle">
+        <img src="photo.jpg" alt="Usman Amjad" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-number">$50M+</div><div class="stat-label">Closed in SaaS</div></div>
+    <div class="stat"><div class="stat-number">4×</div><div class="stat-label">President's Club</div></div>
+    <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Years closing</div></div>
+    <div class="stat"><div class="stat-number">Day 1</div><div class="stat-label">Ready to go</div></div>
+  </div>
+</div>
+
+<div class="logos-bar">
+  <div class="logos-inner">
+    <span class="logos-label">Career track record</span>
+    <div class="logo-pill">Salesforce</div>
+    <div class="logo-pill">D2L</div>
+    <div class="logo-pill">ADP</div>
+    <div class="logo-pill">Xerox</div>
+  </div>
+</div>
+
+<div class="section" id="offer">
+  <div class="section-label">What I do</div>
+  <h2>You built the product.<br>I'll close the deals.</h2>
+  <p>Most founders are exceptional at product and terrible at enterprise sales. That gap is costing you revenue every month.</p>
+  <div class="offer-cards">
+    <div class="offer-card"><div class="offer-num">01</div><h3>Fractional AE</h3><p>I act as your dedicated closer on retainer. Enterprise-calibre execution without the $150K base salary.</p></div>
+    <div class="offer-card"><div class="offer-num">02</div><h3>Deal rescue</h3><p>Pipeline stalled? I step into your late-stage deals, handle procurement, and get contracts signed.</p></div>
+    <div class="offer-card"><div class="offer-num">03</div><h3>Sales foundation</h3><p>No process, no playbook? I'll build it — discovery framework, objection handling, deal structure.</p></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section" id="how">
+  <div class="section-label">How it works</div>
+  <h2>Fast to start.<br>Built to close.</h2>
+  <p>No lengthy onboarding. No guesswork. You get a closer who has done this at scale — in your deals within days.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">Step 01</div><h3>We talk</h3><p>30 minutes. Tell me about your pipeline, your deal size, and where you're losing.</p></div>
+    <div class="step"><div class="step-num">Step 02</div><h3>We agree</h3><p>Retainer, commission, or hybrid — scoped to your stage and budget.</p></div>
+    <div class="step"><div class="step-num">Step 03</div><h3>I close</h3><p>I'm in your deals running discovery, handling objections, and driving to signature.</p></div>
+    <div class="step"><div class="step-num">Step 04</div><h3>You grow</h3><p>Revenue accelerates. You'll know exactly what great looks like when you hire.</p></div>
+  </div>
+</div>
+
+<div class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="section-label">What clients say</div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">Thank you for being so great! You've made the process ever so excellent.</div><div class="quote-author"><div class="quote-avatar av-blue">TECH</div><div><div class="industry-badge badge-blue">Semiconductor</div><div class="quote-role">Senior Marketing Leader</div><div class="quote-industry">Fortune 500 Technology Company</div></div></div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You were responsive and super straightforward and transparent with pricing. That is typically not my experience when buying technology.</div><div class="quote-author"><div class="quote-avatar av-teal">HLTH</div><div><div class="industry-badge badge-teal">Healthcare</div><div class="quote-role">VP, Digital Marketing</div><div class="quote-industry">Major US Hospital System</div></div></div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">I appreciate how helpful and fast you are! Can't wait to move forward.</div><div class="quote-author"><div class="quote-avatar av-green">NPO</div><div><div class="industry-badge badge-green">Non-Profit</div><div class="quote-role">Program Coordinator</div><div class="quote-industry">National Health Advocacy Organization</div></div></div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You are not pushy, you are very informative and honest. Keep doing what you are doing.</div><div class="quote-author"><div class="quote-avatar av-amber">AVIA</div><div><div class="industry-badge badge-amber">Aviation</div><div class="quote-role">Co-Founder</div><div class="quote-industry">Aviation Leader</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="industries-section">
+  <div class="industries-inner">
+    <div class="section-label">Industries</div>
+    <h2>Sectors I know how to sell into.</h2>
+    <p>15+ years of enterprise deals means I understand your buyer's world — budget cycles, procurement gatekeepers, and objections — before I pick up the phone.</p>
+    <div class="industry-list">
+      <div class="industry-item"><div class="industry-dot"></div>Tech / SaaS</div>
+      <div class="industry-item"><div class="industry-dot"></div>Healthcare</div>
+      <div class="industry-item"><div class="industry-dot"></div>HR &amp; Workforce</div>
+      <div class="industry-item"><div class="industry-dot"></div>Non-Profit</div>
+      <div class="industry-item"><div class="industry-dot"></div>Education / EdTech</div>
+      <div class="industry-item"><div class="industry-dot"></div>Fintech</div>
+      <div class="industry-item"><div class="industry-dot"></div>AI</div>
+      <div class="industry-item"><div class="industry-dot"></div>Government</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="about-grid">
+    <div>
+      <div class="section-label">About</div>
+      <h2>15 years closing deals. I do it because I'm genuinely good at it.</h2>
+      <p>I started at Xerox, sold at ADP, worked startups and SMBs at Salesforce, and spent the last six years as a top AE at a SaaS company — President's Club every year. I've sold into boardrooms and to first-time founders. Now I work with early-stage teams who need someone great at closing.</p>
+    </div>
+    <div class="about-card">
+      <div class="avatar-ua">UA</div>
+      <div class="about-name">Usman Amjad</div>
+      <div class="about-role-txt">Fractional Sales Closer · Toronto, ON</div>
+      <div class="award"><div class="award-dot"></div>President's Club — 2021, 2022, 2023, 2024</div>
+      <div class="award"><div class="award-dot"></div>$50M+ closed across SaaS and tech</div>
+      <div class="award"><div class="award-dot"></div>Salesforce, D2L, ADP, Xerox</div>
+      <div class="award"><div class="award-dot"></div>Specialist in $10K–$100K ACV deals</div>
+      <div class="award"><div class="award-dot"></div>Based in Toronto · Available now</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Stop losing deals<br>you should be winning.</h2>
+  <p>Book a free 30-minute call. No pitch. Just an honest conversation about your pipeline.</p>
+  <a href="https://calendly.com/usmanbokinc/30min" class="btn-white" target="_blank">Book your call →</a>
+</div>
+
+<footer>© 2026 Usman Amjad · Toronto, ON</footer>
+
+</body>
 </html>
