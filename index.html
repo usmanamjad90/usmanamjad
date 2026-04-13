@@ -7,82 +7,97 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #ffffff; color: #1a1a1a; }
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 5%; border-bottom: 0.5px solid #e5e5e5; position: sticky; top: 0; background: #fff; z-index: 100; }
-  .nav-brand { font-size: 15px; font-weight: 500; color: #1a1a1a; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 5%; background: #0d1b2e; border-bottom: 0.5px solid #1e3a5f; position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-size: 15px; font-weight: 500; color: #ffffff; }
   .nav-cta { background: #2563eb; color: #fff !important; padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block; }
   .nav-cta:hover { background: #1d4ed8; }
-  .hero { padding: 7rem 5% 5rem; max-width: 960px; margin: 0 auto; }
-  .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 20px; margin-bottom: 2rem; letter-spacing: 0.3px; text-transform: uppercase; }
-  .hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.08; letter-spacing: -2px; margin-bottom: 1.5rem; color: #0a0a0a; }
-  .hero h1 em { font-style: normal; color: #2563eb; }
-  .hero-text p { font-size: 1.1rem; color: #555; line-height: 1.7; max-width: 480px; margin-bottom: 2.5rem; }
+
+  .hero { background: linear-gradient(135deg, #0d1b2e 0%, #1a2f52 60%, #1e3a6e 100%); padding: 6rem 5% 5rem; }
+  .hero-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; gap: 4rem; }
+  .hero-text { flex: 1; }
+  .hero-tag { display: inline-flex; align-items: center; background: rgba(37,99,235,0.25); color: #93b4f5; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 6px; margin-bottom: 1.75rem; letter-spacing: 0.5px; text-transform: uppercase; border: 0.5px solid rgba(37,99,235,0.4); }
+  .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.08; letter-spacing: -2px; margin-bottom: 1.25rem; color: #ffffff; }
+  .hero h1 em { font-style: normal; color: #60a5fa; }
+  .hero-text p { font-size: 1.1rem; color: #7a9bb5; line-height: 1.7; max-width: 480px; margin-bottom: 2.5rem; }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .btn-primary { background: #2563eb; color: #fff !important; padding: 15px 32px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; display: inline-block; }
+  .btn-primary { background: #2563eb; color: #fff !important; padding: 14px 30px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; display: inline-block; }
   .btn-primary:hover { background: #1d4ed8; }
-  .btn-ghost { font-size: 14px; color: #888; text-decoration: none; }
-  .hero-photo { width: 220px; flex-shrink: 0; }
-  .hero-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 8%; border-radius: 16px; display: block; border: 0.5px solid #e5e5e5; }
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 0.5px solid #e5e5e5; border-radius: 12px; overflow: hidden; margin: 4rem 0 0; }
-  .stat { padding: 1.75rem 1.5rem; border-right: 0.5px solid #e5e5e5; background: #fff; }
+  .btn-ghost { font-size: 14px; color: #4a7aa0; text-decoration: none; }
+  .hero-photo { flex-shrink: 0; }
+  .hero-circle { width: 220px; height: 220px; border-radius: 50%; overflow: hidden; border: 3px solid #2563eb; box-shadow: 0 0 0 8px rgba(37,99,235,0.12); }
+  .hero-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center 8%; display: block; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); background: #1a2f52; border-top: 0.5px solid #1e3a5f; border-bottom: 0.5px solid #1e3a5f; }
+  .stat { padding: 1.75rem 1.5rem; border-right: 0.5px solid #1e3a5f; text-align: center; }
   .stat:last-child { border-right: none; }
-  .stat-number { font-size: 2.2rem; font-weight: 700; color: #0a0a0a; letter-spacing: -2px; line-height: 1; }
-  .stat-label { font-size: 12px; color: #999; margin-top: 6px; }
-  .logos-bar { background: #fafafa; border-top: 0.5px solid #e5e5e5; border-bottom: 0.5px solid #e5e5e5; padding: 1.5rem 5%; }
+  .stat-number { font-size: 2.2rem; font-weight: 700; color: #ffffff; letter-spacing: -2px; line-height: 1; }
+  .stat-label { font-size: 12px; color: #4a7aa0; margin-top: 6px; }
+
+  .logos-bar { background: #f8faff; border-bottom: 0.5px solid #dbeafe; padding: 1.5rem 5%; }
   .logos-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-  .logos-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #bbb; font-weight: 600; margin-right: 0.5rem; white-space: nowrap; }
-  .logo-pill { background: #fff; border: 0.5px solid #e5e5e5; color: #666; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; }
+  .logos-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #93c5fd; font-weight: 600; margin-right: 0.5rem; white-space: nowrap; }
+  .logo-pill { background: #fff; border: 0.5px solid #dbeafe; color: #2563eb; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; }
+
   .section { padding: 5rem 5%; max-width: 960px; margin: 0 auto; }
-  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #2563eb; font-weight: 600; margin-bottom: 1rem; }
+  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #2563eb; font-weight: 700; margin-bottom: 1rem; }
   .section h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 1rem; color: #0a0a0a; }
   .section > p { font-size: 1rem; color: #666; line-height: 1.7; max-width: 520px; margin-bottom: 3rem; }
+
   .offer-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-  .offer-card { border: 0.5px solid #e5e5e5; border-radius: 10px; padding: 1.75rem; background: #fff; }
+  .offer-card { border: 0.5px solid #dbeafe; border-radius: 10px; padding: 1.75rem; background: #f8faff; border-top: 3px solid #2563eb; }
   .offer-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: #0a0a0a; }
-  .offer-card p { font-size: 13px; color: #777; line-height: 1.65; }
+  .offer-card p { font-size: 13px; color: #666; line-height: 1.65; }
   .offer-num { font-size: 11px; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+
   .divider { border: none; border-top: 0.5px solid #e5e5e5; margin: 0 5%; }
+
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2.5rem; }
   .step-num { font-size: 11px; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
   .step h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #0a0a0a; }
-  .step p { font-size: 13px; color: #777; line-height: 1.65; }
-  .testimonial-section { background: #fafafa; border-top: 0.5px solid #e5e5e5; border-bottom: 0.5px solid #e5e5e5; padding: 5rem 5%; }
+  .step p { font-size: 13px; color: #666; line-height: 1.65; }
+
+  .testimonial-section { background: #f0f6ff; border-top: 0.5px solid #dbeafe; border-bottom: 0.5px solid #dbeafe; padding: 5rem 5%; }
   .testimonial-inner { max-width: 960px; margin: 0 auto; }
   .testimonial-inner .section-label { margin-bottom: 2rem; }
   .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
-  .testimonial-card { background: #fff; border: 0.5px solid #e5e5e5; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
+  .testimonial-card { background: #fff; border: 0.5px solid #dbeafe; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
   .quote-mark { font-size: 2rem; line-height: 1; color: #2563eb; font-weight: 700; }
   .quote-text { font-size: 0.95rem; color: #1a1a1a; line-height: 1.7; font-weight: 500; flex: 1; }
-  .quote-author { display: flex; align-items: center; gap: 12px; padding-top: 1rem; border-top: 0.5px solid #e5e5e5; }
+  .quote-author { display: flex; align-items: center; gap: 12px; padding-top: 1rem; border-top: 0.5px solid #dbeafe; }
   .quote-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; flex-shrink: 0; }
   .av-blue { background: #2563eb; } .av-teal { background: #0891b2; } .av-green { background: #059669; } .av-amber { background: #d97706; }
   .quote-role { font-size: 13px; font-weight: 600; color: #1a1a1a; }
   .quote-industry { font-size: 11px; color: #888; margin-top: 2px; }
   .industry-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; margin-bottom: 4px; }
   .badge-blue { background: #eff6ff; color: #2563eb; } .badge-teal { background: #ecfeff; color: #0e7490; } .badge-green { background: #f0fdf4; color: #15803d; } .badge-amber { background: #fffbeb; color: #92400e; }
+
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .about-grid h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 1.25rem; color: #0a0a0a; }
   .about-grid > div > p { font-size: 1rem; color: #666; line-height: 1.7; margin-bottom: 1rem; }
-  .about-card { background: #0f172a; border-radius: 12px; padding: 2rem; }
+  .about-card { background: #0d1b2e; border-radius: 12px; padding: 2rem; }
   .avatar-ua { width: 52px; height: 52px; border-radius: 50%; background: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 1rem; }
   .about-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; color: #ffffff; }
-  .about-role-txt { font-size: 12px; color: #94a3b8; margin-bottom: 1.5rem; }
-  .award { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #cbd5e1; padding: 8px 0; border-bottom: 0.5px solid #1e293b; }
+  .about-role-txt { font-size: 12px; color: #4a7aa0; margin-bottom: 1.5rem; }
+  .award { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #7a9bb5; padding: 8px 0; border-bottom: 0.5px solid #1e3a5f; }
   .award:last-child { border-bottom: none; }
   .award-dot { width: 5px; height: 5px; border-radius: 50%; background: #2563eb; flex-shrink: 0; }
-  .cta-band { background: #2563eb; padding: 5rem 5%; text-align: center; }
+
+  .cta-band { background: linear-gradient(135deg, #0d1b2e 0%, #1a2f52 100%); padding: 5rem 5%; text-align: center; }
   .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: #ffffff; letter-spacing: -1px; margin-bottom: 1rem; }
-  .cta-band p { font-size: 1rem; color: rgba(255,255,255,0.75); margin-bottom: 2rem; }
-  .btn-white { background: #ffffff; color: #2563eb !important; padding: 15px 36px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-block; }
-  .btn-white:hover { background: #f0f0f0; }
-  footer { text-align: center; padding: 2rem; font-size: 12px; color: #ccc; }
+  .cta-band p { font-size: 1rem; color: #4a7aa0; margin-bottom: 2rem; }
+  .btn-white { background: #2563eb; color: #fff !important; padding: 15px 36px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-block; }
+  .btn-white:hover { background: #1d4ed8; }
+
+  footer { background: #0d1b2e; text-align: center; padding: 2rem; font-size: 12px; color: #1e3a5f; border-top: 0.5px solid #1e3a5f; }
+
   @media (max-width: 680px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-photo { width: 160px; margin: 0 auto; }
+    .hero-inner { flex-direction: column-reverse; gap: 2rem; }
+    .hero-circle { width: 160px; height: 160px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .stat:nth-child(2) { border-right: none; }
-    .stat:nth-child(3) { border-top: 0.5px solid #e5e5e5; }
-    .stat:nth-child(4) { border-top: 0.5px solid #e5e5e5; border-right: none; }
+    .stat:nth-child(3) { border-top: 0.5px solid #1e3a5f; }
+    .stat:nth-child(4) { border-top: 0.5px solid #1e3a5f; border-right: none; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
 </style>
@@ -97,7 +112,7 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-tag">Fractional Sales Closer · Toronto</div>
+      <div class="hero-tag">Fractional Sales Closer</div>
       <h1>Your deals aren't<br>closing themselves.<br><em>I will.</em></h1>
       <p>I embed as your fractional closer and bring enterprise-level sales execution to your pipeline — no full-time hire, no ramp time, no excuses.</p>
       <div class="hero-actions">
@@ -106,15 +121,18 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="photo.jpg" alt="Usman Amjad" />
+      <div class="hero-circle">
+        <img src="photo.jpg" alt="Usman Amjad" />
+      </div>
     </div>
   </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-number">$50M+</div><div class="stat-label">Closed in SaaS</div></div>
-    <div class="stat"><div class="stat-number">4×</div><div class="stat-label">President's Club</div></div>
-    <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Years closing</div></div>
-    <div class="stat"><div class="stat-number">Day 1</div><div class="stat-label">Ready to go</div></div>
-  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-number">$50M+</div><div class="stat-label">Closed in SaaS</div></div>
+  <div class="stat"><div class="stat-number">4×</div><div class="stat-label">President's Club</div></div>
+  <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Years closing</div></div>
+  <div class="stat"><div class="stat-number">Day 1</div><div class="stat-label">Ready to go</div></div>
 </div>
 
 <div class="logos-bar">
@@ -134,7 +152,7 @@
   <div class="offer-cards">
     <div class="offer-card"><div class="offer-num">01</div><h3>Fractional AE</h3><p>I act as your dedicated closer on retainer. Enterprise-calibre execution without the $150K base salary.</p></div>
     <div class="offer-card"><div class="offer-num">02</div><h3>Deal rescue</h3><p>Pipeline stalled? I step into your late-stage deals, handle procurement, and get contracts signed.</p></div>
-    <div class="offer-card"><div class="offer-num">03</div><h3>Sales foundation</h3><p>No process, no playbook? I'll build it — discovery framework, objection handling, deal structure — before you make your first hire.</p></div>
+    <div class="offer-card"><div class="offer-num">03</div><h3>Sales foundation</h3><p>No process, no playbook? I'll build it — discovery framework, objection handling, deal structure.</p></div>
   </div>
 </div>
 
@@ -145,10 +163,10 @@
   <h2>Fast to start.<br>Built to close.</h2>
   <p>No lengthy onboarding. No guesswork. You get a closer who has done this at scale — in your deals within days.</p>
   <div class="steps">
-    <div class="step"><div class="step-num">Step 01</div><h3>We talk</h3><p>30 minutes. Tell me about your pipeline, your deal size, and where you're losing. I'll tell you if I can help.</p></div>
-    <div class="step"><div class="step-num">Step 02</div><h3>We agree</h3><p>Retainer, commission, or hybrid — scoped to your stage and budget. Simple contract, fast start.</p></div>
+    <div class="step"><div class="step-num">Step 01</div><h3>We talk</h3><p>30 minutes. Tell me about your pipeline, your deal size, and where you're losing.</p></div>
+    <div class="step"><div class="step-num">Step 02</div><h3>We agree</h3><p>Retainer, commission, or hybrid — scoped to your stage and budget.</p></div>
     <div class="step"><div class="step-num">Step 03</div><h3>I close</h3><p>I'm in your deals running discovery, handling objections, and driving to signature.</p></div>
-    <div class="step"><div class="step-num">Step 04</div><h3>You grow</h3><p>Revenue accelerates. When you're ready to hire full-time, you'll know exactly what great looks like.</p></div>
+    <div class="step"><div class="step-num">Step 04</div><h3>You grow</h3><p>Revenue accelerates. You'll know exactly what great looks like when you hire.</p></div>
   </div>
 </div>
 
@@ -157,9 +175,9 @@
     <div class="section-label">What clients say</div>
     <div class="testimonial-grid">
       <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">Thank you for being so great! You've made the process ever so excellent.</div><div class="quote-author"><div class="quote-avatar av-blue">TECH</div><div><div class="industry-badge badge-blue">Semiconductor</div><div class="quote-role">Senior Marketing Leader</div><div class="quote-industry">Fortune 500 Technology Company</div></div></div></div>
-      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You were responsive and super straightforward and transparent with pricing and the contract. That is typically not my experience when buying technology. Thank you for making this process so easy.</div><div class="quote-author"><div class="quote-avatar av-teal">HLTH</div><div><div class="industry-badge badge-teal">Healthcare</div><div class="quote-role">VP, Digital Marketing</div><div class="quote-industry">Major US Hospital System</div></div></div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You were responsive and super straightforward and transparent with pricing. That is typically not my experience when buying technology.</div><div class="quote-author"><div class="quote-avatar av-teal">HLTH</div><div><div class="industry-badge badge-teal">Healthcare</div><div class="quote-role">VP, Digital Marketing</div><div class="quote-industry">Major US Hospital System</div></div></div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">I appreciate how helpful and fast you are! Can't wait to move forward.</div><div class="quote-author"><div class="quote-avatar av-green">NPO</div><div><div class="industry-badge badge-green">Non-Profit</div><div class="quote-role">Program Coordinator</div><div class="quote-industry">National Health Advocacy Organization</div></div></div></div>
-      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You are not pushy, you are very informative and honest. We spoke with two other companies and they did not provide the same guidance. This is the first real big investment we are making for our company. Keep doing what you are doing.</div><div class="quote-author"><div class="quote-avatar av-amber">AVIA</div><div><div class="industry-badge badge-amber">Aviation</div><div class="quote-role">Co-Founder</div><div class="quote-industry">Aviation Leader</div></div></div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You are not pushy, you are very informative and honest. Keep doing what you are doing.</div><div class="quote-author"><div class="quote-avatar av-amber">AVIA</div><div><div class="industry-badge badge-amber">Aviation</div><div class="quote-role">Co-Founder</div><div class="quote-industry">Aviation Leader</div></div></div></div>
     </div>
   </div>
 </div>
