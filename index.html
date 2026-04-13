@@ -115,6 +115,73 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
 
   }
+
+  /* === PREMIUM EFFECTS === */
+
+  /* Floating particles in hero */
+  #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.5; }
+  .hero { position: relative; overflow: hidden; }
+  .hero-inner { position: relative; z-index: 1; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Button shimmer + glow */
+  .btn-primary, .btn-white { position: relative; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease !important; }
+  .btn-primary:hover, .btn-white:hover { transform: translateY(-2px) !important; box-shadow: 0 0 30px rgba(37,99,235,0.6), 0 4px 15px rgba(37,99,235,0.3) !important; }
+  .btn-primary::after, .btn-white::after { content: ''; position: absolute; top: -50%; left: -60%; width: 35%; height: 200%; background: rgba(255,255,255,0.15); transform: skewX(-20deg); transition: left 0.5s ease; }
+  .btn-primary:hover::after, .btn-white:hover::after { left: 130%; }
+  .nav-cta { transition: all 0.2s ease !important; }
+  .nav-cta:hover { box-shadow: 0 0 16px rgba(37,99,235,0.5) !important; transform: translateY(-1px) !important; }
+
+  /* Stat glow on hover */
+  .stat { cursor: default; }
+  .stat-number { transition: text-shadow 0.3s ease; }
+  .stat:hover .stat-number { text-shadow: 0 0 20px rgba(96,165,250,0.8); }
+
+  /* Card hover lift + glow */
+  .offer-card { transition: transform 0.25s cubic-bezier(.16,1,.3,1), box-shadow 0.25s ease, border-color 0.25s ease !important; }
+  .offer-card:hover { transform: translateY(-5px) !important; box-shadow: 0 12px 32px rgba(37,99,235,0.15) !important; border-color: rgba(37,99,235,0.4) !important; }
+  .testimonial-card { transition: transform 0.25s cubic-bezier(.16,1,.3,1), box-shadow 0.25s ease !important; }
+  .testimonial-card:hover { transform: translateY(-4px) !important; box-shadow: 0 10px 28px rgba(37,99,235,0.12) !important; }
+
+  /* Photo ring pulse */
+  @keyframes pulseRing { 0%, 100% { box-shadow: 0 0 0 8px rgba(37,99,235,0.12), 0 0 0 0 rgba(37,99,235,0); } 50% { box-shadow: 0 0 0 12px rgba(37,99,235,0.07), 0 0 28px rgba(37,99,235,0.2); } }
+  .hero-circle { animation: pulseRing 3.5s ease-in-out infinite; }
+
+  /* Hero tag pulse */
+  @keyframes tagPulse { 0%, 100% { background-color: rgba(37,99,235,0.25); } 50% { background-color: rgba(37,99,235,0.38); } }
+  .hero-tag { animation: tagPulse 3s ease-in-out infinite; }
+
+  /* Nav shadow on scroll */
+  nav { transition: box-shadow 0.3s ease; }
+  nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.35); }
+
+  /* About card glow */
+  .about-card { transition: box-shadow 0.3s ease; }
+  .about-card:hover { box-shadow: 0 0 40px rgba(37,99,235,0.18); }
+
+  /* Industry list item hover nudge */
+  .industry-item { transition: color 0.2s ease, padding-left 0.2s ease; }
+  .industry-item:hover { color: #2563eb !important; padding-left: 8px !important; }
+  .industry-item:hover .industry-dot { transform: scale(1.5); }
+  .industry-dot { transition: transform 0.2s ease; }
+
+  /* Logo pill hover */
+  .logo-pill { transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease; cursor: default; }
+  .logo-pill:hover { background: #eff6ff !important; border-color: #2563eb !important; transform: translateY(-1px); }
+
+
+  .apart-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .apart-card { background: #f8faff; border: 0.5px solid #dbeafe; border-radius: 12px; padding: 2rem 1.75rem; border-top: 3px solid #2563eb; transition: transform 0.25s cubic-bezier(.16,1,.3,1), box-shadow 0.25s ease; }
+  .apart-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(37,99,235,0.12); }
+  .apart-icon { width: 44px; height: 44px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+  .apart-icon svg { width: 22px; height: 22px; }
+  .apart-card h3 { font-size: 16px; font-weight: 700; color: #0a0a0a; margin-bottom: 0.6rem; }
+  .apart-card p { font-size: 13px; color: #555; line-height: 1.7; }
+  @media (max-width: 680px) { .apart-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
@@ -176,14 +243,31 @@
 <hr class="divider">
 
 <div class="section" id="how">
-  <div class="section-label">How it works</div>
-  <h2>Fast to start.<br>Built to close.</h2>
-  <p>No lengthy onboarding. No guesswork. You get a closer who has done this at scale — in your deals within days.</p>
-  <div class="steps">
-    <div class="step"><div class="step-num">Step 01</div><h3>We talk</h3><p>30 minutes. Tell me about your pipeline, your deal size, and where you're losing.</p></div>
-    <div class="step"><div class="step-num">Step 02</div><h3>We agree</h3><p>Retainer, commission, or hybrid — scoped to your stage and budget.</p></div>
-    <div class="step"><div class="step-num">Step 03</div><h3>I close</h3><p>I'm in your deals running discovery, handling objections, and driving to signature.</p></div>
-    <div class="step"><div class="step-num">Step 04</div><h3>You grow</h3><p>Revenue accelerates. You'll know exactly what great looks like when you hire.</p></div>
+  <div class="section-label">What sets me apart</div>
+  <h2>Why me?</h2>
+  <p>Most founders don't lose deals on product — they lose them on experience. Here's what I do differently.</p>
+  <div class="apart-grid">
+    <div class="apart-card">
+      <div class="apart-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><path d="M8 12c0-2.209 1.791-4 4-4s4 1.791 4 4-1.791 4-4 4" fill="#2563eb" opacity="0.15" stroke="#2563eb" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>
+      </div>
+      <h3>People buy from people.</h3>
+      <p>I sell the way humans buy — with genuine interest, real conversations, and no script. Your buyers remember the experience, not just the product.</p>
+    </div>
+    <div class="apart-card">
+      <div class="apart-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#2563eb" opacity="0.15" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Deals don't stall.</h3>
+      <p>I respond fast and answer every question clearly. Your buyers stay warm and your pipeline keeps moving — without you having to chase it.</p>
+    </div>
+    <div class="apart-card">
+      <div class="apart-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" fill="#2563eb" opacity="0.15" stroke="#2563eb" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Buyers trust your company.</h3>
+      <p>I'm straight on pricing, honest about fit, and never push. Buyers feel that — and it makes them confident saying yes to you.</p>
+    </div>
   </div>
 </div>
 
@@ -195,6 +279,8 @@
       <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You were responsive and super straightforward and transparent with pricing. That is typically not my experience when buying technology.</div><div class="quote-author"><div class="quote-avatar av-teal">HLTH</div><div><div class="industry-badge badge-teal">Healthcare</div><div class="quote-role">VP, Digital Marketing</div><div class="quote-industry">Major US Hospital System</div></div></div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">I appreciate how helpful and fast you are! Can't wait to move forward.</div><div class="quote-author"><div class="quote-avatar av-green">NPO</div><div><div class="industry-badge badge-green">Non-Profit</div><div class="quote-role">Program Coordinator</div><div class="quote-industry">National Health Advocacy Organization</div></div></div></div>
       <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You are not pushy, you are very informative and honest. Keep doing what you are doing.</div><div class="quote-author"><div class="quote-avatar av-amber">AVIA</div><div><div class="industry-badge badge-amber">Aviation</div><div class="quote-role">Co-Founder</div><div class="quote-industry">Aviation Leader</div></div></div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">SO patient and answered every question quickly and clearly. That kind of responsiveness is rare when buying technology.</div><div class="quote-author"><div class="quote-avatar av-blue">EDU</div><div><div class="industry-badge badge-blue">Education</div><div class="quote-role">Administrative Officer, Alumni Relations</div><div class="quote-industry">Major Canadian University</div></div></div></div>
+      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">The most professional and efficient salesperson. Good business acumen. Good follow up.</div><div class="quote-author"><div class="quote-avatar av-teal">GOV</div><div><div class="industry-badge badge-teal">Government</div><div class="quote-role">CEO &amp; Publisher</div><div class="quote-industry">Media &amp; Information Governance Company</div></div></div></div>
     </div>
   </div>
 </div>
@@ -245,191 +331,76 @@
 
 <footer>© 2026 Usman Amjad · Toronto, ON</footer>
 
-</body>
-</html>  .testimonial-inner { max-width: 960px; margin: 0 auto; padding: 0 5%; }
-  .testimonial-inner .section-label { margin-bottom: 2rem; }
-  .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
-  .testimonial-card { background: #fff; border: 0.5px solid #dbeafe; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
-  .quote-mark { font-size: 2rem; line-height: 1; color: #2563eb; font-weight: 700; }
-  .quote-text { font-size: 0.95rem; color: #1a1a1a; line-height: 1.7; font-weight: 500; flex: 1; }
-  .quote-author { display: flex; align-items: center; gap: 12px; padding-top: 1rem; border-top: 0.5px solid #dbeafe; }
-  .quote-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; flex-shrink: 0; }
-  .av-blue { background: #2563eb; } .av-teal { background: #0891b2; } .av-green { background: #059669; } .av-amber { background: #d97706; }
-  .quote-role { font-size: 13px; font-weight: 600; color: #1a1a1a; }
-  .quote-industry { font-size: 11px; color: #888; margin-top: 2px; }
-  .industry-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; margin-bottom: 4px; }
-  .badge-blue { background: #eff6ff; color: #2563eb; } .badge-teal { background: #ecfeff; color: #0e7490; } .badge-green { background: #f0fdf4; color: #15803d; } .badge-amber { background: #fffbeb; color: #92400e; }
-
-  .industries-section { background: #f8faff; border-top: 0.5px solid #dbeafe; border-bottom: 0.5px solid #dbeafe; padding: 5rem 0; }
-  .industries-inner { max-width: 960px; margin: 0 auto; padding: 0 5%; }
-  .industries-inner .section-label { margin-bottom: 0.75rem; }
-  .industries-inner h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 0.75rem; color: #0a0a0a; }
-  .industries-inner > p { font-size: 1rem; color: #666; line-height: 1.7; max-width: 520px; margin-bottom: 2rem; }
-  .industry-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 500px; }
-  .industry-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 0.5px solid #e8f0fe; font-size: 14px; font-weight: 500; color: #1a1a1a; }
-  .industry-dot { width: 8px; height: 8px; background: #2563eb; border-radius: 50%; flex-shrink: 0; }
 
 
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .about-grid h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 1.25rem; color: #0a0a0a; }
-  .about-grid > div > p { font-size: 1rem; color: #666; line-height: 1.7; margin-bottom: 1rem; }
-  .about-card { background: #0d1b2e; border-radius: 12px; padding: 2rem; }
-  .avatar-ua { width: 52px; height: 52px; border-radius: 50%; background: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 1rem; }
-  .about-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; color: #ffffff; }
-  .about-role-txt { font-size: 12px; color: #4a7aa0; margin-bottom: 1.5rem; }
-  .award { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #7a9bb5; padding: 8px 0; border-bottom: 0.5px solid #1e3a5f; }
-  .award:last-child { border-bottom: none; }
-  .award-dot { width: 5px; height: 5px; border-radius: 50%; background: #2563eb; flex-shrink: 0; }
 
-  .cta-band { background: linear-gradient(135deg, #0d1b2e 0%, #1a2f52 100%); padding: 5rem 5%; text-align: center; max-width: none; }
-  .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: #ffffff; letter-spacing: -1px; margin-bottom: 1rem; }
-  .cta-band p { font-size: 1rem; color: #4a7aa0; margin-bottom: 2rem; }
-  .btn-white { background: #2563eb; color: #fff !important; padding: 15px 36px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-block; }
-  .btn-white:hover { background: #1d4ed8; }
-
-  footer { background: #0d1b2e; text-align: center; padding: 2rem; font-size: 12px; color: #1e3a5f; border-top: 0.5px solid #1e3a5f; }
-
-  @media (max-width: 680px) {
-    .hero-inner { flex-direction: column-reverse; gap: 2rem; }
-    .hero-circle { width: 160px; height: 160px; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .stats-inner .stat:nth-child(2) { border-right: none; }
-    .stats-inner .stat:nth-child(3) { border-top: 0.5px solid #1e3a5f; }
-    .stats-inner .stat:nth-child(4) { border-top: 0.5px solid #1e3a5f; border-right: none; }
-    .stats { grid-template-columns: 1fr; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-
+<script>
+(function() {
+  // Floating particles in hero
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'particles-canvas';
+    hero.insertBefore(canvas, hero.firstChild);
+    const ctx = canvas.getContext('2d');
+    function resize() { canvas.width = hero.offsetWidth; canvas.height = hero.offsetHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+    const particles = Array.from({length: 45}, () => ({
+      x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+      r: Math.random() * 1.4 + 0.4,
+      dx: (Math.random() - 0.5) * 0.25, dy: (Math.random() - 0.5) * 0.25,
+      o: Math.random() * 0.45 + 0.15
+    }));
+    (function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(96,165,250,' + p.o + ')'; ctx.fill();
+        p.x += p.dx; p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(draw);
+    })();
   }
-</style>
-</head>
-<body>
 
-<nav>
-  <div class="nav-brand">Usman Amjad</div>
-  <a href="https://calendly.com/usmanbokinc/30min" class="nav-cta" target="_blank">Book a call →</a>
-</nav>
+  // Scroll reveal
+  document.querySelectorAll('.section, .testimonial-section, .industries-section, .cta-band, .logos-bar').forEach(el => el.classList.add('reveal'));
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  }), { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-tag">Fractional Sales Closer</div>
-      <h1>Your deals aren't<br>closing themselves.<br><em>I will.</em></h1>
-      <p>I embed as your fractional closer and bring enterprise-level sales execution to your pipeline — no full-time hire, no ramp time, no excuses.</p>
-      <div class="hero-actions">
-        <a href="https://calendly.com/usmanbokinc/30min" class="btn-primary" target="_blank">Book a free 30-min call</a>
-        <a href="#how" class="btn-ghost">See how it works ↓</a>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <div class="hero-circle">
-        <img src="photo.jpg" alt="Usman Amjad" />
-      </div>
-    </div>
-  </div>
-</div>
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
 
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat"><div class="stat-number">$50M+</div><div class="stat-label">Closed in SaaS</div></div>
-    <div class="stat"><div class="stat-number">4×</div><div class="stat-label">President's Club</div></div>
-    <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Years closing</div></div>
-    <div class="stat"><div class="stat-number">Day 1</div><div class="stat-label">Ready to go</div></div>
-  </div>
-</div>
-
-<div class="logos-bar">
-  <div class="logos-inner">
-    <span class="logos-label">Career track record</span>
-    <div class="logo-pill">Salesforce</div>
-    <div class="logo-pill">D2L</div>
-    <div class="logo-pill">ADP</div>
-    <div class="logo-pill">Xerox</div>
-  </div>
-</div>
-
-<div class="section" id="offer">
-  <div class="section-label">What I do</div>
-  <h2>You built the product.<br>I'll close the deals.</h2>
-  <p>Most founders are exceptional at product and terrible at enterprise sales. That gap is costing you revenue every month.</p>
-  <div class="offer-cards">
-    <div class="offer-card"><div class="offer-num">01</div><h3>Fractional AE</h3><p>I act as your dedicated closer on retainer. Enterprise-calibre execution without the $150K base salary.</p></div>
-    <div class="offer-card"><div class="offer-num">02</div><h3>Deal rescue</h3><p>Pipeline stalled? I step into your late-stage deals, handle procurement, and get contracts signed.</p></div>
-    <div class="offer-card"><div class="offer-num">03</div><h3>Sales foundation</h3><p>No process, no playbook? I'll build it — discovery framework, objection handling, deal structure.</p></div>
-  </div>
-</div>
-
-<hr class="divider">
-
-<div class="section" id="how">
-  <div class="section-label">How it works</div>
-  <h2>Fast to start.<br>Built to close.</h2>
-  <p>No lengthy onboarding. No guesswork. You get a closer who has done this at scale — in your deals within days.</p>
-  <div class="steps">
-    <div class="step"><div class="step-num">Step 01</div><h3>We talk</h3><p>30 minutes. Tell me about your pipeline, your deal size, and where you're losing.</p></div>
-    <div class="step"><div class="step-num">Step 02</div><h3>We agree</h3><p>Retainer, commission, or hybrid — scoped to your stage and budget.</p></div>
-    <div class="step"><div class="step-num">Step 03</div><h3>I close</h3><p>I'm in your deals running discovery, handling objections, and driving to signature.</p></div>
-    <div class="step"><div class="step-num">Step 04</div><h3>You grow</h3><p>Revenue accelerates. You'll know exactly what great looks like when you hire.</p></div>
-  </div>
-</div>
-
-<div class="testimonial-section">
-  <div class="testimonial-inner">
-    <div class="section-label">What clients say</div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">Thank you for being so great! You've made the process ever so excellent.</div><div class="quote-author"><div class="quote-avatar av-blue">TECH</div><div><div class="industry-badge badge-blue">Semiconductor</div><div class="quote-role">Senior Marketing Leader</div><div class="quote-industry">Fortune 500 Technology Company</div></div></div></div>
-      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You were responsive and super straightforward and transparent with pricing. That is typically not my experience when buying technology.</div><div class="quote-author"><div class="quote-avatar av-teal">HLTH</div><div><div class="industry-badge badge-teal">Healthcare</div><div class="quote-role">VP, Digital Marketing</div><div class="quote-industry">Major US Hospital System</div></div></div></div>
-      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">I appreciate how helpful and fast you are! Can't wait to move forward.</div><div class="quote-author"><div class="quote-avatar av-green">NPO</div><div><div class="industry-badge badge-green">Non-Profit</div><div class="quote-role">Program Coordinator</div><div class="quote-industry">National Health Advocacy Organization</div></div></div></div>
-      <div class="testimonial-card"><div class="quote-mark">"</div><div class="quote-text">You are not pushy, you are very informative and honest. Keep doing what you are doing.</div><div class="quote-author"><div class="quote-avatar av-amber">AVIA</div><div><div class="industry-badge badge-amber">Aviation</div><div class="quote-role">Co-Founder</div><div class="quote-industry">Aviation Leader</div></div></div></div>
-    </div>
-  </div>
-</div>
-
-<div class="industries-section">
-  <div class="industries-inner">
-    <div class="section-label">Industries</div>
-    <h2>Sectors I know how to sell into.</h2>
-    <p>15+ years of enterprise deals means I understand your buyer's world — budget cycles, procurement gatekeepers, and objections — before I pick up the phone.</p>
-    <div class="industry-list">
-      <div class="industry-item"><div class="industry-dot"></div>Tech / SaaS</div>
-      <div class="industry-item"><div class="industry-dot"></div>Healthcare</div>
-      <div class="industry-item"><div class="industry-dot"></div>HR &amp; Workforce</div>
-      <div class="industry-item"><div class="industry-dot"></div>Non-Profit</div>
-      <div class="industry-item"><div class="industry-dot"></div>Education / EdTech</div>
-      <div class="industry-item"><div class="industry-dot"></div>Fintech</div>
-      <div class="industry-item"><div class="industry-dot"></div>AI</div>
-      <div class="industry-item"><div class="industry-dot"></div>Government</div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="about-grid">
-    <div>
-      <div class="section-label">About</div>
-      <h2>15 years closing deals. I do it because I'm genuinely good at it.</h2>
-      <p>I started at Xerox, sold at ADP, worked startups and SMBs at Salesforce, and spent the last six years as a top AE at a SaaS company — President's Club every year. I've sold into boardrooms and to first-time founders. Now I work with early-stage teams who need someone great at closing.</p>
-    </div>
-    <div class="about-card">
-      <div class="avatar-ua">UA</div>
-      <div class="about-name">Usman Amjad</div>
-      <div class="about-role-txt">Fractional Sales Closer · Toronto, ON</div>
-      <div class="award"><div class="award-dot"></div>President's Club — 2021, 2022, 2023, 2024</div>
-      <div class="award"><div class="award-dot"></div>$50M+ closed across SaaS and tech</div>
-      <div class="award"><div class="award-dot"></div>Salesforce, D2L, ADP, Xerox</div>
-      <div class="award"><div class="award-dot"></div>Specialist in $10K–$100K ACV deals</div>
-      <div class="award"><div class="award-dot"></div>Based in Toronto · Available now</div>
-    </div>
-  </div>
-</div>
-
-<div class="cta-band">
-  <h2>Stop losing deals<br>you should be winning.</h2>
-  <p>Book a free 30-minute call. No pitch. Just an honest conversation about your pipeline.</p>
-  <a href="https://calendly.com/usmanbokinc/30min" class="btn-white" target="_blank">Book your call →</a>
-</div>
-
-<footer>© 2026 Usman Amjad · Toronto, ON</footer>
+  // Stat counter animation
+  function counter(el, prefix, target, suffix) {
+    let start = null;
+    (function run(ts) {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / 1600, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.floor(e * target) + suffix;
+      if (p < 1) requestAnimationFrame(run);
+      else el.textContent = prefix + target + suffix;
+    })(performance.now());
+  }
+  const statObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target, t = el.textContent;
+      if (t.includes('50')) counter(el, '$', 50, 'M+');
+      else if (t.includes('4')) counter(el, '', 4, '×');
+      else if (t.includes('15')) counter(el, '', 15, '+');
+      statObs.unobserve(el);
+    }
+  }), { threshold: 0.6 });
+  document.querySelectorAll('.stat-number').forEach(el => statObs.observe(el));
+})();
+</script>
 
 </body>
 </html>
