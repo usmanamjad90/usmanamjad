@@ -72,6 +72,19 @@
   .industry-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; margin-bottom: 4px; }
   .badge-blue { background: #eff6ff; color: #2563eb; } .badge-teal { background: #ecfeff; color: #0e7490; } .badge-green { background: #f0fdf4; color: #15803d; } .badge-amber { background: #fffbeb; color: #92400e; }
 
+  .industries-section { background: #f8faff; border-top: 0.5px solid #dbeafe; border-bottom: 0.5px solid #dbeafe; padding: 5rem 5%; }
+  .industries-inner { max-width: 960px; margin: 0 auto; }
+  .industries-inner .section-label { margin-bottom: 0.75rem; }
+  .industries-inner h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 0.75rem; color: #0a0a0a; }
+  .industries-inner > p { font-size: 1rem; color: #666; line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem; }
+  .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .industry-card { background: #fff; border: 0.5px solid #dbeafe; border-radius: 10px; padding: 1.25rem; display: flex; align-items: center; gap: 0.75rem; transition: box-shadow 0.15s; height: 72px; overflow: hidden; }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(37,99,235,0.08); }
+  .industry-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 8px; background: #eff6ff; display: flex; align-items: center; justify-content: center; }
+  .industry-icon svg { width: 20px; height: 20px; }
+  .industry-name { font-size: 13px; font-weight: 600; color: #0a0a0a; }
+
+
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .about-grid h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 1.25rem; color: #0a0a0a; }
   .about-grid > div > p { font-size: 1rem; color: #666; line-height: 1.7; margin-bottom: 1rem; }
@@ -99,6 +112,7 @@
     .stat:nth-child(3) { border-top: 0.5px solid #1e3a5f; }
     .stat:nth-child(4) { border-top: 0.5px solid #1e3a5f; border-right: none; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .industry-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -182,14 +196,113 @@
   </div>
 </div>
 
+<div class="industries-section">
+  <div class="industries-inner">
+    <div class="section-label">Industries</div>
+    <h2>Sectors I know how to sell into.</h2>
+    <p>15+ years across enterprise deals means I understand your buyer's world — their budget cycles, procurement gatekeepers, and objections — before I pick up the phone.</p>
+    <div class="industry-grid">
+
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="3" width="18" height="11" rx="2" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.5"/>
+            <path d="M6 17h8M10 14v3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M5.5 8.5l2 2-2 2" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 12.5h4" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">Tech / SaaS</span>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 18C10 18 2.5 13.5 2.5 8C2.5 5.239 4.739 3 7.5 3C8.879 3 10.129 3.585 11 4.528C11.871 3.585 13.121 3 14.5 3C17.261 3 19.5 5.239 19.5 8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 18C10 18 2.5 13.5 2.5 8" fill="#2563eb" opacity="0.12"/>
+            <path d="M10 9v3M8.5 10.5h3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">Healthcare</span>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="6" r="3" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.5"/>
+            <path d="M2 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="15" cy="7.5" r="2" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.3"/>
+            <path d="M17.5 16c0-1.933-1.119-3.5-2.8-4.15" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">HR &amp; Workforce</span>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M7.5 18v-5a2.5 2.5 0 015 0v5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">Non-Profit</span>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L2 6.5l8 4.5 8-4.5L10 2z" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M2 6.5v5.5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M5.5 8.5v4.75C5.5 15.097 7.567 16.5 10 16.5s4.5-1.403 4.5-3.25V8.5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">Education / EdTech</span>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="16" height="12" rx="2" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.5"/>
+            <path d="M2 8h16" stroke="#2563eb" stroke-width="1.5"/>
+            <path d="M10 6V2M10 2l-1.5 1.5M10 2l1.5 1.5" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 12h2M12 12h2M10 11v2" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">Fintech</span>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="5" width="10" height="10" rx="2" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.5"/>
+            <circle cx="10" cy="10" r="2.5" fill="#2563eb"/>
+            <path d="M10 1.5v3M10 15.5v3M1.5 10h3M15.5 10h3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">AI</span>
+      <div class="industry-card">
+        <div class="industry-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 18h16" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="8" y="13" width="4" height="5" rx="0.5" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1.3"/>
+            <path d="M4 18v-6M16 18v-6" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M2 10l8-8 8 8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 12h2M12 12h2" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="industry-name">Government</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <div class="section">
   <div class="about-grid">
     <div>
       <div class="section-label">About</div>
-      <h2>I've been closing enterprise deals since before SaaS was a category.</h2>
-      <p>I carried a bag at Salesforce. I've built teams. I've closed deals from $10K to seven figures across tech, HR, and events software.</p>
-      <p>I know what a stuck deal looks like. I know what a bad discovery call costs you. And I've spent 15 years fixing both.</p>
-      <p>Now I work with a handful of early-stage founders who want to win deals they should be winning — without adding headcount.</p>
+      <h2>15 years closing deals. I do it because I'm genuinely good at it.</h2>
+      <p>I started at Xerox, sold at ADP, worked startups and SMBs at Salesforce, and spent the last six years as a top AE at a SaaS company — President's Club every year. I've sold into boardrooms and to first-time founders. Now I work with early-stage teams who need someone great at closing.</p>
     </div>
     <div class="about-card">
       <div class="avatar-ua">UA</div>
@@ -197,7 +310,7 @@
       <div class="about-role-txt">Fractional Sales Closer · Toronto, ON</div>
       <div class="award"><div class="award-dot"></div>President's Club — 2021, 2022, 2023, 2024</div>
       <div class="award"><div class="award-dot"></div>$50M+ closed across SaaS and tech</div>
-      <div class="award"><div class="award-dot"></div>Enterprise AE — Salesforce, D2L, ADP</div>
+      <div class="award"><div class="award-dot"></div>Salesforce, D2L, ADP, Xerox</div>
       <div class="award"><div class="award-dot"></div>Specialist in $10K–$100K ACV deals</div>
       <div class="award"><div class="award-dot"></div>Based in Toronto · Available now</div>
     </div>
