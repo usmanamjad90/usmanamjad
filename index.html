@@ -1,498 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Usman Amjad — Fractional Sales Closer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Usman Amjad — Fractional Sales</title>
+<meta name="description" content="A senior North America based closer who builds your pipeline from your own LinkedIn and closes the deals it brings in. Fractional — no full-time hire." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', -apple-system, sans-serif; background: #fff; color: #1a1a1a; }
+  :root{
+    --ink:#0a1220; --ink-2:#0e1a2e;
+    --bone:#eceae3; --bone-2:#f5f3ed;
+    --cobalt:#2b54f0; --cobalt-br:#6286ff;
+    --pt:#161e2e; --pmuted:#5a6275;
+    --it:#edeae2; --imuted:#97a3ba;
+    --line:#dcd7cb; --line-ink:rgba(255,255,255,.13);
+    --disp:'Schibsted Grotesk',sans-serif;
+    --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bone-2);color:var(--pt);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-0.03em;line-height:1.02}
+  a{text-decoration:none;color:inherit}
+  .mono{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.18em;font-size:.7rem;font-weight:500}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 48px}
 
-/* ── NAV ── */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 5%; background: #0d1b2e; border-bottom: 0.5px solid #1e3a5f; position: sticky; top: 0; z-index: 100; transition: box-shadow 0.3s; }
-nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
-.nav-brand { font-size: 15px; font-weight: 700; color: #fff; text-decoration: none; }
-.nav-links { display: flex; align-items: center; gap: 4px; }
-.nav-link { color: #94a3b8; padding: 7px 13px; border-radius: 6px; font-size: 12.5px; font-weight: 500; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
-.nav-link:hover { color: #e2e8f0; background: rgba(255,255,255,0.06); }
-.nav-link.active { color: #fff; background: rgba(37,99,235,0.2); }
-.nav-divider { width: 1px; height: 16px; background: #1e3a5f; margin: 0 4px; }
-.nav-cta { background: #2563eb; color: #fff; padding: 8px 18px; border-radius: 6px; font-size: 12.5px; font-weight: 600; text-decoration: none; transition: all 0.2s; margin-left: 4px; white-space: nowrap; }
-.nav-cta:hover { background: #1d4ed8; }
-.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
-.nav-hamburger span { display: block; width: 20px; height: 2px; background: #94a3b8; margin: 4px 0; border-radius: 2px; transition: all 0.3s; }
-.nav-hamburger:hover span { background: #fff; }
-.nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 98; }
-.nav-overlay.open { display: block; }
+  .grain{position:absolute;inset:0;opacity:.05;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-@media (max-width: 800px) {
-  .nav-links { position: fixed; top: 0; right: -280px; width: 260px; height: 100vh; background: #0d1b2e; flex-direction: column; align-items: stretch; padding: 4.5rem 1.5rem 2rem; gap: 2px; transition: right 0.3s ease; border-left: 1px solid #1e3a5f; box-shadow: -8px 0 30px rgba(0,0,0,0.4); z-index: 99; }
-  .nav-links.open { right: 0; }
-  .nav-link { padding: 12px 14px; font-size: 14px; border-radius: 8px; }
-  .nav-cta { margin-left: 0; margin-top: 10px; text-align: center; padding: 12px 18px; font-size: 14px; border-radius: 8px; }
-  .nav-divider { display: none; }
-  .nav-hamburger { display: block; z-index: 200; }
-}
+  nav{position:sticky;top:0;z-index:30;background:rgba(10,18,32,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-ink)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  nav .name{font-family:var(--disp);font-weight:700;color:var(--it);font-size:1.15rem;letter-spacing:-0.02em}
+  nav .name i{color:var(--cobalt-br);font-style:normal}
+  nav .navlinks{display:flex;align-items:center;gap:30px}
+  nav .navlink{color:var(--imuted);font-size:.9rem}
+  nav .navlink:hover{color:var(--it)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:500;font-size:.92rem;padding:13px 24px;border-radius:6px;transition:all .2s;cursor:pointer}
+  .btn-pri{background:var(--cobalt);color:#fff}
+  .btn-pri:hover{background:#1d40cf;transform:translateY(-1px)}
+  .btn-line{border:1px solid var(--line-ink);color:var(--it)}
+  .btn-line:hover{background:rgba(255,255,255,.06)}
+  nav .btn{padding:10px 20px}
 
-/* ── HERO ── */
-.hero { background: linear-gradient(135deg, #0d1b2e 0%, #1a2f52 65%, #1e3a6e 100%); padding: 5.5rem 0 5rem; position: relative; overflow: hidden; }
-#particles-canvas { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-.hero-inner { max-width: 980px; margin: 0 auto; padding: 0 5%; display: flex; align-items: center; gap: 4rem; position: relative; z-index: 1; }
-.hero-text { flex: 1; }
-.hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3); color: #93c5fd; font-size: 11.5px; font-weight: 600; letter-spacing: 0.09em; padding: 5px 13px; border-radius: 20px; margin-bottom: 1.5rem; text-transform: uppercase; }
-.hero-tag-dot { width: 6px; height: 6px; background: #3b82f6; border-radius: 50%; animation: blink 2s ease-in-out infinite; }
-@keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.8)} }
-.hero h1 { font-size: clamp(2.8rem, 5.5vw, 4rem); font-weight: 900; color: #fff; line-height: 1.07; margin-bottom: 1.3rem; letter-spacing: -0.03em; }
-.hero h1 .blue { color: #60a5fa; }
-.hero-sub { font-size: 1.05rem; color: #94a3b8; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; }
-.hero-sub strong { color: #cbd5e1; font-weight: 500; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2.8rem; }
-.btn-primary { background: #2563eb; color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.2s; }
-.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(37,99,235,0.38); }
-.btn-ghost { color: #94a3b8; padding: 13px 22px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); transition: all 0.2s; }
-.btn-ghost:hover { border-color: rgba(255,255,255,0.22); color: #e2e8f0; }
-.hero-stats { display: flex; gap: 2.8rem; flex-wrap: wrap; }
-.stat-number { font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; }
-.stat-number .accent { color: #60a5fa; }
-.stat-label { font-size: 12px; color: #64748b; margin-top: 4px; }
-.hero-photo-wrap { flex-shrink: 0; position: relative; }
-.hero-photo { width: 310px; height: 310px; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 3px solid rgba(96,165,250,0.4); display: block; }
-.hero-photo-ring { position: absolute; inset: -12px; border-radius: 50%; border: 1px solid rgba(96,165,250,0.12); animation: ring-pulse 3.5s ease-in-out infinite; }
-@keyframes ring-pulse { 0%,100%{transform:scale(1);opacity:0.4} 50%{transform:scale(1.05);opacity:0.9} }
+  .hero{position:relative;background:var(--ink);color:var(--it);overflow:hidden;padding:118px 0 92px}
+  .hero:before{content:"";position:absolute;top:-25%;right:-10%;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,rgba(43,84,240,.20),transparent 60%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .ey{color:var(--cobalt-br);display:flex;align-items:center;gap:14px}
+  .hero .ey:before{content:"";width:34px;height:1px;background:var(--cobalt-br);display:inline-block;flex:none}
+  .hero h1{font-size:clamp(2.9rem,8vw,6.4rem);font-weight:700;margin:30px 0 0;max-width:15ch}
+  .hero h1 .ac{color:var(--cobalt-br)}
+  .hero .sub{margin-top:32px;font-size:clamp(1.1rem,2.2vw,1.3rem);line-height:1.55;color:#c3cbdb;max-width:50ch}
+  .hero .cta{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap}
+  .stats{margin-top:84px;display:flex;flex-wrap:wrap;gap:56px;border-top:1px solid var(--line-ink);padding-top:34px}
+  .stat .n{font-family:var(--disp);font-size:clamp(2.3rem,4vw,3.1rem);font-weight:700;letter-spacing:-0.03em}
+  .stat .n b{color:var(--cobalt-br)}
+  .stat .l{margin-top:8px;color:var(--imuted)}
 
-.logos-bar { background: #f8fafc; border-top: 1px solid #e8edf4; border-bottom: 1px solid #e8edf4; padding: 1rem 5%; display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; }
-.logos-label { font-size: 11px; font-weight: 600; color: #94a3b8; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
-.logo-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.logo-pill { background: #fff; border: 1px solid #e2e8f0; color: #64748b; font-size: 12px; font-weight: 600; padding: 4px 13px; border-radius: 20px; }
+  section{padding:clamp(72px,10vw,120px) 0}
+  .ink-sec{background:var(--ink);color:var(--it);position:relative;overflow:hidden}
+  .secidx{display:flex;align-items:center;gap:16px;color:var(--cobalt)}
+  .ink-sec .secidx{color:var(--cobalt-br)}
+  .head{margin-bottom:60px}
+  .head h2{font-size:clamp(2.1rem,5vw,3.5rem);font-weight:600;margin-top:22px;max-width:18ch}
+  .ink-sec .head h2{color:var(--it)}
+  .head .lead{margin-top:20px;color:var(--pmuted);font-size:clamp(1.05rem,2vw,1.18rem);max-width:46ch}
+  .ink-sec .head .lead{color:var(--imuted)}
 
-.sw { padding: 4.5rem 5%; }
-.si { max-width: 980px; margin: 0 auto; }
-.section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #2563eb; margin-bottom: 0.6rem; }
-.section-title { font-size: clamp(1.7rem, 3.2vw, 2.3rem); font-weight: 800; color: #0f172a; line-height: 1.15; margin-bottom: 0.65rem; letter-spacing: -0.025em; }
-.section-sub { font-size: 0.95rem; color: #64748b; max-width: 520px; line-height: 1.78; margin-bottom: 2.5rem; }
+  .caps{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .cap{background:#fff;border:1px solid var(--line);border-radius:10px;padding:44px 40px}
+  .cap .tag{color:var(--cobalt);margin-bottom:26px;display:block}
+  .cap h3{font-size:clamp(1.5rem,2.6vw,1.85rem);font-weight:600;margin-bottom:18px}
+  .cap p{color:var(--pmuted);font-size:1.05rem}
+  .cap .proof{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:.97rem;color:var(--pt);font-weight:500}
 
-.offerings-bg { background: #f8fafc; }
-.offerings-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.3rem; }
-.offer-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.8rem; transition: all 0.22s; }
-.offer-card:hover { border-color: #93c5fd; transform: translateY(-3px); box-shadow: 0 14px 36px rgba(37,99,235,0.09); }
-.offer-num { font-size: 10.5px; font-weight: 700; color: #2563eb; letter-spacing: 0.12em; margin-bottom: 0.9rem; text-transform: uppercase; }
-.offer-icon { width: 40px; height: 40px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.9rem; }
-.offer-title { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; }
-.offer-desc { font-size: 0.87rem; color: #64748b; line-height: 1.75; margin-bottom: 0.9rem; }
-.offer-fit { font-size: 10.5px; font-weight: 600; color: #2563eb; background: #eff6ff; padding: 4px 10px; border-radius: 6px; display: inline-block; }
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:60px}
+  .q{padding:34px 30px;background:rgba(255,255,255,.03);border:1px solid var(--line-ink);border-radius:10px}
+  .q .mk{font-family:var(--disp);font-size:3rem;color:var(--cobalt-br);line-height:.5;height:24px}
+  .q blockquote{font-size:1.06rem;color:#d7ddea;margin:18px 0 22px;line-height:1.5}
+  .q .who b{display:block;font-weight:600;color:var(--it);font-size:.95rem;margin-bottom:3px}
+  .q .who span{color:var(--imuted);font-size:.86rem}
+  .record{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;border-top:1px solid var(--line-ink);padding-top:52px}
+  .record h3{font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:600}
+  .record .rl{margin-top:16px;color:var(--imuted);font-size:1.1rem}
+  .record ul{list-style:none;display:grid;gap:14px}
+  .record li{display:flex;align-items:baseline;gap:14px;color:#d7ddea;font-size:1.02rem}
+  .record li i{color:var(--cobalt-br);font-style:normal;font-weight:700}
+  .record li b{color:var(--it);font-weight:600}
 
-.diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.3rem; }
-.diff-card { border-left: 3px solid #2563eb; padding: 1.4rem 1.4rem 1.4rem 1.8rem; background: #f8fafc; border-radius: 0 10px 10px 0; }
-.diff-title { font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.4rem; }
-.diff-desc { font-size: 0.85rem; color: #64748b; line-height: 1.7; }
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px}
+  .tier{background:#fff;border:1px solid var(--line);border-radius:10px;padding:42px 38px;display:flex;flex-direction:column}
+  .tier .tag{color:var(--cobalt);margin-bottom:18px;display:block}
+  .tier h3{font-size:1.5rem;font-weight:600;margin-bottom:24px}
+  .tier .amt{font-family:var(--disp);font-size:3.4rem;font-weight:700;letter-spacing:-0.03em;line-height:1}
+  .tier .per{margin-top:8px;color:var(--pmuted);font-size:.92rem}
+  .tier ul{list-style:none;margin:28px 0 0;display:grid;gap:13px;border-top:1px solid var(--line);padding-top:26px}
+  .tier li{position:relative;padding-left:26px;color:var(--pt);font-size:.97rem}
+  .tier li:before{content:"→";position:absolute;left:0;color:var(--cobalt);font-weight:600}
+  .both{margin-top:34px;font-family:var(--disp);font-size:1.25rem;font-weight:600;color:var(--pt)}
+  .both b{color:var(--cobalt)}
+  .price-cta{margin-top:32px}
+  .fine{margin-top:22px;color:var(--pmuted);font-size:.8rem;letter-spacing:.01em}
 
-.process-bg { background: #0d1b2e; }
-.process-bg .section-label { color: #60a5fa; }
-.process-bg .section-title { color: #fff; }
-.process-bg .section-sub { color: #94a3b8; margin-bottom: 3rem; }
-.process-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; position: relative; }
-.process-steps::before { content: ''; position: absolute; top: 27px; left: calc(16.66% + 18px); right: calc(16.66% + 18px); height: 1px; background: rgba(96,165,250,0.15); }
-.process-step { text-align: center; padding: 0 1.8rem; }
-.step-circle { width: 54px; height: 54px; border-radius: 50%; background: rgba(37,99,235,0.14); border: 1px solid rgba(37,99,235,0.35); color: #60a5fa; font-size: 1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.4rem; position: relative; z-index: 1; }
-.process-step h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-.process-step p { font-size: 0.85rem; color: #94a3b8; line-height: 1.75; }
-.process-cta { text-align: center; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
-.process-cta p { color: #94a3b8; font-size: 0.92rem; margin-bottom: 1.4rem; }
+  .band{background:var(--ink);color:var(--it);text-align:center;position:relative;overflow:hidden}
+  .band:before{content:"";position:absolute;left:50%;bottom:-60%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(circle,rgba(43,84,240,.22),transparent 60%)}
+  .band .wrap{position:relative;z-index:2}
+  .band h2{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;max-width:18ch;margin:0 auto}
+  .band p{color:#c3cbdb;font-size:clamp(1.05rem,2vw,1.2rem);margin:24px auto 38px;max-width:44ch}
 
-.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
-.testi-card { background: #fff; border: 1px solid #e8edf4; border-radius: 12px; padding: 1.6rem; transition: all 0.2s; display: flex; flex-direction: column; }
-.testi-card:hover { border-color: #bfdbfe; box-shadow: 0 8px 24px rgba(37,99,235,0.07); transform: translateY(-2px); }
-.testi-quote { color: #1e293b; font-size: 0.9rem; line-height: 1.75; font-style: italic; flex: 1; margin-bottom: 1.2rem; }
-.testi-quote::before { content: '\201C'; color: #2563eb; font-size: 1.6rem; font-style: normal; line-height: 0; vertical-align: -0.4rem; margin-right: 2px; }
-.testi-footer { display: flex; align-items: flex-start; gap: 0.7rem; }
-.testi-badge { font-size: 9.5px; font-weight: 700; letter-spacing: 0.09em; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; padding: 3px 7px; border-radius: 5px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
-.testi-meta strong { display: block; font-size: 0.8rem; color: #0f172a; font-weight: 600; }
-.testi-meta span { font-size: 0.76rem; color: #94a3b8; }
+  footer{background:var(--ink);color:var(--imuted);border-top:1px solid var(--line-ink);padding:40px 0}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  footer .name{font-family:var(--disp);font-weight:700;color:var(--it);font-size:1.05rem}
+  footer .name i{color:var(--cobalt-br);font-style:normal}
 
-.proof-bg { background: #f8fafc; }
-.proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: start; }
-.proof-creds { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.8rem; }
-.proof-cred { display: flex; gap: 0.9rem; align-items: flex-start; }
-.cred-dot { width: 7px; height: 7px; background: #2563eb; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
-.proof-cred p { font-size: 0.9rem; color: #334155; line-height: 1.6; }
-.proof-cred p strong { color: #0f172a; font-weight: 600; }
-.proof-card { background: #0d1b2e; border-radius: 14px; padding: 2rem; border: 1px solid #1e3a5f; }
-.proof-card-avatar { width: 52px; height: 52px; background: #1e3a5f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; color: #60a5fa; margin-bottom: 1.1rem; }
-.proof-card-name { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 3px; }
-.proof-card-role { font-size: 0.82rem; color: #60a5fa; margin-bottom: 1.4rem; font-weight: 500; }
-.proof-card-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 1.2rem; }
-.proof-card-list { display: flex; flex-direction: column; gap: 0.6rem; }
-.proof-card-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.84rem; color: #94a3b8; line-height: 1.5; }
-.proof-card-item::before { content: '→'; color: #2563eb; flex-shrink: 0; font-weight: 700; }
-.availability-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25); color: #86efac; font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 20px; margin-top: 1.2rem; }
-.avail-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: blink 2s infinite; }
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--cobalt-br);outline-offset:3px;border-radius:6px}
 
-.pricing-bg { background: linear-gradient(135deg, #0d1b2e 0%, #1a2f52 60%, #1e3a6e 100%); }
-.pricing-center { max-width: 560px; margin: 0 auto; }
-.pricing-bg .section-label { color: #60a5fa; text-align: center; }
-.pricing-heading { font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 800; color: #fff; text-align: center; margin-bottom: 12px; line-height: 1.15; letter-spacing: -0.025em; }
-.pricing-sub { text-align: center; color: #94a3b8; font-size: 0.95rem; margin-bottom: 48px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.78; }
-.pricing-card { background: linear-gradient(165deg, #111f36 0%, #0f1a2b 100%); border: 1px solid #2563eb; border-radius: 16px; padding: 44px 36px; box-shadow: 0 0 50px rgba(37,99,235,0.1); transition: box-shadow 0.3s; }
-.pricing-card:hover { box-shadow: 0 0 60px rgba(37,99,235,0.18); }
-.pricing-card-title { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -0.02em; }
-.pricing-card-desc { color: #94a3b8; font-size: 0.88rem; line-height: 1.7; margin-bottom: 32px; }
-.price-block { display: flex; gap: 20px; align-items: stretch; margin-bottom: 8px; }
-.price-item { flex: 1; background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 20px; text-align: center; }
-.price-item-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: #64748b; font-weight: 600; margin-bottom: 8px; }
-.price-item-value { font-size: 2.2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1; }
-.price-item-note { font-size: 0.75rem; color: #3b82f6; font-weight: 500; margin-top: 6px; }
-.plus-sign { display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #475569; font-weight: 300; flex-shrink: 0; width: 24px; }
-.pitch-line { text-align: center; color: #64748b; font-size: 0.8rem; font-style: italic; margin-bottom: 32px; margin-top: 16px; }
-.pricing-divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 24px; }
-.pricing-includes { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: #64748b; margin-bottom: 16px; font-weight: 700; }
-.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
-.pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: #cbd5e1; line-height: 1.5; }
-.pricing-check { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; background: rgba(37,99,235,0.15); display: flex; align-items: center; justify-content: center; margin-top: 2px; }
-.pricing-check svg { width: 10px; height: 10px; }
-.pricing-cta { display: block; width: 100%; padding: 16px; text-align: center; border-radius: 10px; font-size: 0.95rem; font-weight: 700; text-decoration: none; background: #2563eb; color: #fff; box-shadow: 0 4px 20px rgba(37,99,235,0.3); border: none; font-family: inherit; cursor: pointer; transition: all 0.2s; }
-.pricing-cta:hover { background: #3b82f6; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(37,99,235,0.38); }
-.pricing-terms { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
-.pricing-terms-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: #475569; font-weight: 700; margin-bottom: 12px; }
-.pricing-terms-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.pricing-terms-list li { font-size: 0.78rem; color: #64748b; line-height: 1.5; padding-left: 14px; position: relative; }
-.pricing-terms-list li::before { content: '·'; position: absolute; left: 0; color: #475569; font-weight: 700; }
-
-.cta-band { background: linear-gradient(135deg, #0d1b2e 0%, #1e3a6e 100%); padding: 5rem 5%; text-align: center; }
-.cta-band h2 { font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 900; color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.7rem; }
-.cta-band p { color: #94a3b8; font-size: 0.97rem; margin-bottom: 2rem; }
-
-footer { background: #0d1b2e; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid #1a2f52; }
-footer p, footer a { font-size: 12px; color: #334155; text-decoration: none; }
-footer a:hover { color: #64748b; }
-
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-
-@media (max-width: 800px) {
-  .hero-inner { flex-direction: column; gap: 2.5rem; }
-  .hero-photo-wrap { display: none; }
-  .offerings-grid, .diff-grid, .process-steps, .testi-grid { grid-template-columns: 1fr; }
-  .process-steps::before { display: none; }
-  .proof-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .price-block { flex-direction: column; gap: 12px; }
-  .plus-sign { width: auto; }
-  .pricing-card { padding: 32px 24px; }
-}
+  @media(max-width:820px){
+    .wrap{padding:0 26px}
+    .caps,.quotes,.tiers,.record{grid-template-columns:1fr}
+    .record{gap:32px;padding-top:40px}
+    .stats{gap:32px}
+    nav .navlinks{gap:18px}
+    .cap{padding:34px 28px}
+    .tier{padding:34px 30px}
+  }
+  @media(max-width:520px){
+    nav .navlink{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+    .btn:hover{transform:none}
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-brand">Usman Amjad</a>
-  <div class="nav-links" id="navLinks">
-    <a href="#offerings" class="nav-link" data-section="offerings">Services</a>
-    <a href="#process" class="nav-link" data-section="process">Process</a>
-    <a href="#testimonials" class="nav-link" data-section="testimonials">Clients</a>
-    <a href="#proof" class="nav-link" data-section="proof">Track Record</a>
-    <a href="#pricing" class="nav-link" data-section="pricing">Pricing</a>
-    <div class="nav-divider"></div>
-    <a href="https://calendly.com/usmanbokinc/30min" class="nav-cta" target="_blank">Book a Call →</a>
-  </div>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-overlay" id="navOverlay"></div>
-
-<section class="hero" id="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-tag"><span class="hero-tag-dot"></span>Fractional Sales Closer</div>
-      <h1>Your deals aren't<br>closing themselves.<br><span class="blue">I will.</span></h1>
-      <p class="hero-sub">Most founders are brilliant at product and stretched thin on sales. I step in as your <strong>dedicated senior closer</strong> — no full-time hire, no ramp time, no risk.</p>
-      <div class="hero-actions">
-        <a href="https://calendly.com/usmanbokinc/30min" class="btn-primary" target="_blank">Book a free 30-min call</a>
-        <a href="#offerings" class="btn-ghost">See how it works ↓</a>
-      </div>
-      <div class="hero-stats">
-        <div><div class="stat-number">$50<span class="accent">M+</span></div><div class="stat-label">Closed in SaaS & tech</div></div>
-        <div><div class="stat-number">5<span class="accent">×</span></div><div class="stat-label">President's Club</div></div>
-        <div><div class="stat-number">15<span class="accent">+</span></div><div class="stat-label">Years closing enterprise</div></div>
-      </div>
+  <div class="wrap">
+    <div class="name">Usman Amjad<i>.</i></div>
+    <div class="navlinks">
+      <a class="navlink" href="#what">Work</a>
+      <a class="navlink" href="#pricing">Pricing</a>
+      <a class="btn btn-pri" href="#book">Book a call</a>
     </div>
-    <div class="hero-photo-wrap">
-      <div class="hero-photo-ring"></div>
-      <img class="hero-photo" src="photo.jpg" alt="Usman Amjad" onerror="this.closest('.hero-photo-wrap').style.display='none'">
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="ey mono">Fractional Sales — Pipeline &amp; Closing</div>
+    <h1>I find your buyers <span class="ac">and close them.</span></h1>
+    <p class="sub">Anyone can automate messages. Knowing which buyers are worth one comes from closing $50M. I build your pipeline from your own LinkedIn, then close what it brings in.</p>
+    <div class="cta">
+      <a class="btn btn-pri" href="#book">Book a free 30-min call</a>
+      <a class="btn btn-line" href="#what">See how it works</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">$50M<b>+</b></div><div class="l mono">Closed</div></div>
+      <div class="stat"><div class="n">5<b>×</b></div><div class="l mono">President's Club</div></div>
+      <div class="stat"><div class="n">15<b>+</b></div><div class="l mono">Years closing</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="what" style="background:var(--bone-2)">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secidx mono">01 / What I do</div>
+      <h2>I get the meetings, and I close them.</h2>
+      <p class="lead">Most founders are missing one — the meetings, or someone senior to close them. I do both.</p>
+    </div>
+    <div class="caps">
+      <div class="cap reveal">
+        <span class="tag mono">Outbound</span>
+        <h3>I generate the pipeline — from your profile.</h3>
+        <p>Knowing who's worth a message is the part you can't automate — that read comes from closing $50M across every kind of buyer. I find the prospects others miss and reach them from your own profile, by hand.</p>
+        <div class="proof">Vetted by someone who's closed these buyers — not a scraped list.</div>
+      </div>
+      <div class="cap reveal">
+        <span class="tag mono">Closing</span>
+        <h3>I close the deals.</h3>
+        <p>I run the deal end to end — discovery, demos, objections, procurement, legal, signature. Enterprise closing on $10K–$100K ACV deals, the zone where founders stall.</p>
+        <div class="proof">$50M+ closed. Ranked #1 AE five years running at 150%+ of a $2M quota.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="logos-bar reveal">
-  <span class="logos-label">Career track record</span>
-  <div class="logo-pills">
-    <span class="logo-pill">Salesforce</span>
-    <span class="logo-pill">D2L</span>
-    <span class="logo-pill">ADP</span>
-    <span class="logo-pill">Xerox</span>
-  </div>
-</div>
-
-<div class="offerings-bg" id="offerings">
-  <div class="sw reveal"><div class="si">
-    <div class="section-label">What I do</div>
-    <h2 class="section-title">You built the product.<br>I'll close the deals.</h2>
-    <p class="section-sub">Three ways to engage — each built around where your sales gap actually is.</p>
-    <div class="offerings-grid">
-      <div class="offer-card">
-        <div class="offer-num">01</div>
-        <div class="offer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div>
-        <div class="offer-title">Fractional AE</div>
-        <p class="offer-desc">Your dedicated senior closer on retainer. I run discovery, demos, negotiations, and contracts at enterprise level — without the $150K base.</p>
-        <span class="offer-fit">Best fit: teams without a closer</span>
+<section class="ink-sec">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secidx mono">02 / Proof</div>
+      <h2>Words from the other side of the deal.</h2>
+    </div>
+    <div class="quotes">
+      <div class="q reveal">
+        <div class="mk">"</div>
+        <blockquote>Responsive and super straightforward, and transparent with pricing — typically not my experience buying technology.</blockquote>
+        <div class="who"><b>VP, Digital Marketing</b><span>Major US Hospital System</span></div>
       </div>
-      <div class="offer-card">
-        <div class="offer-num">02</div>
-        <div class="offer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="offer-title">Deal Rescue</div>
-        <p class="offer-desc">Deals stalled at late stage? I step in, re-engage buyers, handle procurement and legal, and get contracts over the line.</p>
-        <span class="offer-fit">Best fit: stuck late-stage deals</span>
+      <div class="q reveal">
+        <div class="mk">"</div>
+        <blockquote>The most professional and efficient salesperson. Good business acumen. Good follow-up.</blockquote>
+        <div class="who"><b>CEO &amp; Publisher</b><span>Media &amp; Information Company</span></div>
       </div>
-      <div class="offer-card">
-        <div class="offer-num">03</div>
-        <div class="offer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M3 17h4m0 0v4m0-4H3"/></svg></div>
-        <div class="offer-title">Sales Foundation</div>
-        <p class="offer-desc">No playbook yet? I build it — discovery framework, objection handling, deal structure — so your next rep ramps in weeks, not months.</p>
-        <span class="offer-fit">Best fit: pre-sales-hire stage</span>
+      <div class="q reveal">
+        <div class="mk">"</div>
+        <blockquote>You are not pushy — very informative and honest. Keep doing what you're doing.</blockquote>
+        <div class="who"><b>Co-Founder</b><span>Aviation Leader</span></div>
       </div>
     </div>
-  </div></div>
-</div>
-
-<div class="sw reveal"><div class="si">
-  <div class="section-label">What you get</div>
-  <h2 class="section-title">Your buyers will feel<br>the difference.</h2>
-  <p class="section-sub">Most deals don't stall on product — they stall on how they're sold.</p>
-  <div class="diff-grid">
-    <div class="diff-card">
-      <div class="diff-title">Deals keep moving</div>
-      <p class="diff-desc">Fast responses, clear answers, warm buyers. Your pipeline doesn't go cold — and you're not chasing it.</p>
-    </div>
-    <div class="diff-card">
-      <div class="diff-title">Buyers trust your company</div>
-      <p class="diff-desc">Straight on pricing, honest about fit, never pushy. That transparency is rare in enterprise sales — and it closes deals.</p>
-    </div>
-    <div class="diff-card">
-      <div class="diff-title">Nothing falls through the cracks</div>
-      <p class="diff-desc">Procurement, legal, multi-stakeholder sign-off — I know how enterprise buying works and how to keep it moving.</p>
-    </div>
-  </div>
-</div></div>
-
-<div class="process-bg" id="process">
-  <div class="sw reveal"><div class="si">
-    <div class="section-label">How it works</div>
-    <h2 class="section-title" style="color:#fff">Revenue moving in days,<br>not months.</h2>
-    <p class="section-sub">No ramp time. No agency overhead. A senior closer ready to work from Day 1.</p>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-circle">01</div>
-        <h3>Diagnose</h3>
-        <p>30 minutes on your pipeline. We find where deals are breaking down. Honest assessment, no pitch.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">02</div>
-        <h3>Close</h3>
-        <p>I run the full sales process — discovery, demos, objections, procurement, contracts. You stay informed, not buried.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-circle">03</div>
-        <h3>Scale</h3>
-        <p>I document what's working into a repeatable playbook — so your next hire inherits a proven system.</p>
-      </div>
-    </div>
-    <div class="process-cta">
-      <p>Most clients see pipeline momentum within the first two weeks.</p>
-      <a href="https://calendly.com/usmanbokinc/30min" class="btn-primary" target="_blank">Book a free 30-min call</a>
-    </div>
-  </div></div>
-</div>
-
-<div class="sw reveal" id="testimonials"><div class="si">
-  <div class="section-label">What clients say</div>
-  <h2 class="section-title">Words from the other side<br>of the deal.</h2>
-  <p class="section-sub">Real buyers. Real deals. Real feedback.</p>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <p class="testi-quote">Thank you for being so great! You've made the process ever so excellent.</p>
-      <div class="testi-footer"><span class="testi-badge">TECH</span><div class="testi-meta"><strong>Senior Marketing Leader</strong><span>Fortune 500 Technology Company</span></div></div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">You were responsive and super straightforward and transparent with pricing. That is typically not my experience when buying technology.</p>
-      <div class="testi-footer"><span class="testi-badge">HLTH</span><div class="testi-meta"><strong>VP, Digital Marketing</strong><span>Major US Hospital System</span></div></div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">I appreciate how helpful and fast you are! Can't wait to move forward.</p>
-      <div class="testi-footer"><span class="testi-badge">NPO</span><div class="testi-meta"><strong>Program Coordinator</strong><span>National Health Advocacy Organization</span></div></div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">You are not pushy, you are very informative and honest. Keep doing what you are doing.</p>
-      <div class="testi-footer"><span class="testi-badge">AVIA</span><div class="testi-meta"><strong>Co-Founder</strong><span>Aviation Leader</span></div></div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">SO patient and answered every question quickly and clearly. That kind of responsiveness is rare when buying technology.</p>
-      <div class="testi-footer"><span class="testi-badge">EDU</span><div class="testi-meta"><strong>Administrative Officer, Alumni Relations</strong><span>Major Canadian University</span></div></div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">The most professional and efficient salesperson. Good business acumen. Good follow up.</p>
-      <div class="testi-footer"><span class="testi-badge">GOV</span><div class="testi-meta"><strong>CEO & Publisher</strong><span>Media & Information Governance Company</span></div></div>
-    </div>
-  </div>
-</div></div>
-
-<div class="proof-bg" id="proof">
-  <div class="sw reveal"><div class="si">
-    <div class="section-label">The track record</div>
-    <h2 class="section-title">Ranked #1, every year.<br>Now working for you.</h2>
-    <div class="proof-grid">
+    <div class="record reveal">
       <div>
-        <p style="font-size:0.95rem;color:#475569;line-height:1.8;">You're not hiring a generalist. You're getting a closer who has been the top performer at every company he's worked for — for over a decade — and is bringing that to your pipeline on a fractional basis.</p>
-        <div class="proof-creds">
-          <div class="proof-cred"><div class="cred-dot"></div><p><strong>$50M+ closed in SaaS and tech</strong> — enterprise, mid-market, and public sector.</p></div>
-          <div class="proof-cred"><div class="cred-dot"></div><p><strong>President's Club 5 consecutive years</strong> — ranked #1 AE, 150%+ of a $2M annual quota.</p></div>
-          <div class="proof-cred"><div class="cred-dot"></div><p><strong>Salesforce alumni</strong> — trained in the gold standard of enterprise sales methodology.</p></div>
-          <div class="proof-cred"><div class="cred-dot"></div><p><strong>Specialist in $10K–$100K ACV deals</strong> — the complexity zone where most founders get stuck.</p></div>
-          <div class="proof-cred"><div class="cred-dot"></div><p><strong>Available now, 10–20 hrs/week</strong> — no ramp, no agency overhead. Just me.</p></div>
-        </div>
+        <h3>Ranked #1, every year.<br>Now working for you.</h3>
+        <p class="rl">Not a generalist — the top performer at every company he's worked, over a decade, now on your pipeline.</p>
       </div>
-      <div>
-        <div class="proof-card">
-          <div class="proof-card-avatar">UA</div>
-          <div class="proof-card-name">Usman Amjad</div>
-          <div class="proof-card-role">Fractional Sales Closer · Toronto, ON</div>
-          <div class="proof-card-divider"></div>
-          <div class="proof-card-list">
-            <div class="proof-card-item">President's Club — 2021, 2022, 2023, 2024, 2025</div>
-            <div class="proof-card-item">$50M+ closed across SaaS and tech</div>
-            <div class="proof-card-item">Salesforce · D2L · ADP · Xerox</div>
-            <div class="proof-card-item">Specialist in $10K–$100K ACV deals</div>
-            <div class="proof-card-item">SaaS · Healthcare · EdTech · Gov · Non-Profit</div>
-          </div>
-          <div class="availability-badge"><span class="avail-dot"></span>Available now · 10–20 hrs/week</div>
-        </div>
-      </div>
+      <ul>
+        <li><i>→</i><span><b>$50M+ closed</b> across SaaS &amp; tech</span></li>
+        <li><i>→</i><span><b>President's Club</b> 2021–2025</span></li>
+        <li><i>→</i><span><b>Salesforce-trained</b> enterprise methodology</span></li>
+        <li><i>→</i><span><b>$10K–$100K ACV</b> specialist</span></li>
+        <li><i>→</i><span><b>Available now</b> · 10–20 hrs/week</span></li>
+      </ul>
     </div>
-  </div></div>
-</div>
+  </div>
+</section>
 
-<div class="pricing-bg" id="pricing">
-  <div class="sw reveal"><div class="si">
-    <div class="pricing-center">
-      <div class="section-label">Pricing</div>
-      <h2 class="pricing-heading">I only win when you win.</h2>
-      <p class="pricing-sub">One simple pricing model. Low base, commission on what I close. Fully aligned with your growth.</p>
-      <div class="pricing-card">
-        <h3 class="pricing-card-title">Fractional Sales Closer</h3>
-        <p class="pricing-card-desc">One simple pricing model. Low base, commission on what I close. Fully aligned with your growth.</p>
-        <div class="price-block">
-          <div class="price-item">
-            <div class="price-item-label">Monthly retainer</div>
-            <div class="price-item-value">$1,200</div>
-            <div class="price-item-note">flat / month</div>
-          </div>
-          <div class="plus-sign">+</div>
-          <div class="price-item">
-            <div class="price-item-label">Commission</div>
-            <div class="price-item-value">10%</div>
-            <div class="price-item-note">on Year 1 ACV closed</div>
-          </div>
-        </div>
-        <p class="pitch-line">A full-time AE costs $120K+. You get a proven closer for a fraction of that.</p>
-        <div class="pricing-divider"></div>
-        <div class="pricing-includes">What's included</div>
-        <ul class="pricing-features">
-          <li><span class="pricing-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Discovery calls, demos & proposals</li>
-          <li><span class="pricing-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Pricing negotiation & objection handling</li>
-          <li><span class="pricing-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Procurement & legal navigation</li>
-          <li><span class="pricing-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Contract close, signature & handoff</li>
-          <li><span class="pricing-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CRM pipeline tracking & deal strategy</li>
+<section id="pricing" style="background:var(--bone)">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="secidx mono">03 / Pricing</div>
+      <h2>Outbound and closing, priced separately.</h2>
+    </div>
+    <div class="tiers">
+      <div class="tier reveal">
+        <span class="tag mono">Outbound</span>
+        <h3>Pipeline from your profile</h3>
+        <div class="amt">$1,200</div>
+        <div class="per">flat / month · USD</div>
+        <ul>
+          <li>Prospect vetting from 15 years across industries</li>
+          <li>Personalized outreach from your own LinkedIn</li>
+          <li>Qualified meetings booked on your calendar</li>
         </ul>
-        <a href="https://calendly.com/usmanbokinc/30min" class="pricing-cta" target="_blank">Book a free 30-min call →</a>
-        <div class="pricing-terms">
-          <div class="pricing-terms-label">How it works</div>
-          <ul class="pricing-terms-list">
-            <li>3-month minimum commitment</li>
-            <li>Commission applies to deals I directly close</li>
-            <li>Commission paid on contract signature</li>
-            <li>10% calculated on Year 1 annual contract value</li>
-          </ul>
-        </div>
+      </div>
+      <div class="tier reveal">
+        <span class="tag mono">Closing</span>
+        <h3>Your deals, closed</h3>
+        <div class="amt">$600</div>
+        <div class="per">flat / month · USD</div>
+        <ul>
+          <li>Discovery, demos &amp; objection handling</li>
+          <li>Procurement, legal &amp; multi-stakeholder sign-off</li>
+          <li>Contract close, signature &amp; handoff</li>
+        </ul>
       </div>
     </div>
-  </div></div>
-</div>
+    <p class="both reveal">Take one, or both for <b>$1,800/mo</b>.</p>
+    <div class="price-cta reveal"><a class="btn btn-pri" href="#book">Book a free 30-min call</a></div>
+    <p class="fine reveal">All prices in USD · 3-month minimum · Billed monthly.</p>
+  </div>
+</section>
 
-<div class="cta-band reveal">
-  <h2>Stop losing deals<br>you should be winning.</h2>
-  <p>Book a free 30-minute call. No pitch. Just an honest conversation about your pipeline.</p>
-  <a href="https://calendly.com/usmanbokinc/30min" class="btn-primary" target="_blank">Book your call →</a>
-</div>
+<section class="band" id="book">
+  <div class="grain"></div>
+  <div class="wrap">
+    <h2 class="reveal">Stop losing deals you should be winning.</h2>
+    <p class="reveal">Book a free 30-minute call. No pitch — just an honest read on your pipeline.</p>
+    <a class="btn btn-pri reveal" href="mailto:usman@usmanamjad.ca">Book your call</a>
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 Usman Amjad · Toronto, ON</p>
-  <a href="mailto:usman@usmanamjad.ca">usman@usmanamjad.ca</a>
+  <div class="wrap">
+    <div class="name">Usman Amjad<i>.</i></div>
+    <div class="mono" style="color:var(--imuted)">Toronto, ON · usman@usmanamjad.ca</div>
+  </div>
 </footer>
 
 <script>
-/* Nav scroll shadow */
-window.addEventListener('scroll', () => { document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
-
-/* Mobile hamburger */
-const hamburger = document.getElementById('navHamburger');
-const navLinks = document.getElementById('navLinks');
-const navOverlay = document.getElementById('navOverlay');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); navOverlay.classList.toggle('open'); });
-navOverlay.addEventListener('click', () => { navLinks.classList.remove('open'); navOverlay.classList.remove('open'); });
-
-/* Smooth scroll + close mobile menu */
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      const navH = document.querySelector('nav').offsetHeight;
-      window.scrollTo({ top: target.offsetTop - navH - 8, behavior: 'smooth' });
+  (function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');}); return;
     }
-    navLinks.classList.remove('open');
-    navOverlay.classList.remove('open');
-  });
-});
-
-/* Active nav link on scroll */
-const sections = document.querySelectorAll('[id]');
-const navItems = document.querySelectorAll('.nav-link[data-section]');
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY + 120;
-  let current = '';
-  sections.forEach(s => { if (s.offsetTop <= scrollY) current = s.id; });
-  navItems.forEach(n => { n.classList.toggle('active', n.dataset.section === current); });
-}, { passive: true });
-
-/* Scroll reveal */
-const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }), { threshold: 0.06 });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
-/* Particles */
-const hero = document.querySelector('.hero');
-if (hero) {
-  const c = document.createElement('canvas'); c.id = 'particles-canvas'; hero.insertBefore(c, hero.firstChild);
-  const ctx = c.getContext('2d');
-  function resize() { c.width = hero.offsetWidth; c.height = hero.offsetHeight; } resize();
-  window.addEventListener('resize', resize, { passive: true });
-  const pts = Array.from({ length: 45 }, () => ({ x: Math.random() * c.width, y: Math.random() * c.height, r: Math.random() * 1.4 + 0.4, dx: (Math.random() - 0.5) * 0.25, dy: (Math.random() - 0.5) * 0.25, o: Math.random() * 0.45 + 0.12 }));
-  (function draw() { ctx.clearRect(0, 0, c.width, c.height); pts.forEach(p => { ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fillStyle = 'rgba(96,165,250,' + p.o + ')'; ctx.fill(); p.x += p.dx; p.y += p.dy; if (p.x < 0 || p.x > c.width) p.dx *= -1; if (p.y < 0 || p.y > c.height) p.dy *= -1; }); requestAnimationFrame(draw); })();
-}
-
-/* Stat counters */
-document.querySelectorAll('.stat-number').forEach(el => {
-  const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (!e.isIntersecting) return; const txt = el.textContent; let target, prefix = '', suffix = ''; if (txt.includes('50')) { target=50; prefix='$'; suffix='M+'; } else if (txt.includes('5')) { target=5; suffix='×'; } else if (txt.includes('15')) { target=15; suffix='+'; } if (!target) return; const accent = el.querySelector('.accent'); let start = null; (function run(ts) { if (!start) start=ts; const p=Math.min((ts-start)/1500,1); const ease=1-Math.pow(1-p,3); el.childNodes[0].textContent=prefix+Math.floor(ease*target); if(accent) accent.textContent=suffix; if(p<1) requestAnimationFrame(run); else el.childNodes[0].textContent=prefix+target; })(performance.now()); obs.unobserve(el); }); }, { threshold: 0.8 });
-  obs.observe(el);
-});
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  })();
 </script>
 </body>
 </html>
