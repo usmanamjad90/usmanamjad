@@ -139,6 +139,14 @@
     .herophoto{justify-self:center;max-width:300px;margin-top:6px}
     .record{gap:28px;padding:34px 28px}
   }
+  .pnote{margin-top:22px;color:var(--lmuted);font-size:.92rem;max-width:840px}
+  .bundle{margin-top:18px;max-width:840px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box;border:1.5px solid transparent;border-radius:16px;padding:24px 30px;box-shadow:0 22px 48px -26px rgba(43,84,240,.45)}
+  .bundle .tag{color:var(--cobalt);margin-bottom:6px;display:block}
+  .bundle-h{font-family:var(--disp);font-size:clamp(1.1rem,2vw,1.4rem);font-weight:700;color:var(--ltext);letter-spacing:-0.02em}
+  .bundle-r{display:flex;align-items:baseline;gap:3px}
+  .bundle-r .grad{font-family:var(--disp);font-size:clamp(2rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em}
+  .bundle-r .bper{color:var(--lmuted);font-size:.9rem}
+  .comm{display:inline-block;margin-top:12px;background:rgba(43,84,240,.1);color:var(--cobalt);font-weight:600;font-size:.85rem;padding:6px 13px;border-radius:999px}
 </style>
 </head>
 <body>
@@ -224,31 +232,41 @@
     <div class="head">
       <div class="secidx mono">03 / Pricing</div>
       <h2>Outbound and closing, priced separately.</h2>
+      <p class="lead">Best fit: early-stage B2B SaaS and tech startups selling into North American mid-market and enterprise.</p>
     </div>
     <div class="tiers">
       <div class="glass tier">
         <span class="tag mono">Outbound</span>
         <h3>LinkedIn pipeline from your profile</h3>
         <div class="amt grad">$1,200</div>
-        <div class="per">flat / month · USD</div>
+        <div class="per">retainer / month · USD</div>
+        <div class="comm">+ 10% of closed deals</div>
         <ul><li>Prospect vetting from 15 years across industries</li><li>Personalized LinkedIn outreach, sent from your own profile</li><li>Qualified meetings booked on your calendar</li></ul>
       </div>
       <div class="glass tier">
         <span class="tag mono">Closing</span>
         <h3>Your deals, closed</h3>
         <div class="amt grad">$600</div>
-        <div class="per">flat / month · USD</div>
+        <div class="per">retainer / month · USD</div>
+        <div class="comm">+ 15% of closed deals</div>
         <ul><li>Discovery, demos &amp; objection handling</li><li>Procurement, legal &amp; sign-off</li><li>Contract close, signature &amp; handoff</li></ul>
       </div>
     </div>
-    <p class="both">Take one, or both for <span class="grad">$1,800/mo</span>.</p>
+    <p class="pnote">Monthly retainer + commission, charged only when a deal closes — 10% on outbound, 15% on inbound. A few clients at a time.</p>
+    <div class="bundle">
+      <div>
+        <span class="tag mono">Outbound + Closing</span>
+        <div class="bundle-h">The complete revenue engine</div>
+      </div>
+      <div class="bundle-r"><span class="grad">$1,800</span><span class="bper">/mo + commission</span></div>
+    </div>
   </div>
 </section>
 
 <section class="band" id="book">
   <div class="wrap">
     <h2>Let's talk.</h2>
-    <p>Book a free 30-minute call — no pitch, just an honest read on your pipeline and where I'd start.</p>
+    <p>Book a free 30-minute call. No pressure — let's see if I can help.</p>
     <a class="btn btn-pri" href="https://calendly.com/usmanbokinc/30min" target="_blank" rel="noopener">Book your call</a>
   </div>
 </section>
